@@ -1,12 +1,11 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#F6F0E4" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#1C221E" media="(prefers-color-scheme: dark)"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="2027 Reset"><link rel="manifest" href="manifest.json"><link rel="apple-touch-icon" href="icon-180.png"><link rel="icon" href="icon-192.png">
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#F6F0E4" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#1C221E" media="(prefers-color-scheme: dark)"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="2027 Reset"><title>The 2027 Reset</title><link rel="manifest" href="manifest.json"><link rel="apple-touch-icon" href="icon-180.png"><link rel="icon" href="icon-192.png">
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}body{margin:0;font-size:14px}[hidden]{display:none!important}</style>
-<title>The 2027 Reset</title>
 <style>
 /* Layout: one column, sticky tab bar, cards on cream; sage = done, blush = rest/skip */
-:root{--bg:#F6F0E4;--card:#FFFBF3;--ink:#2B372C;--mut:#6B766A;--sage:#7C9A7E;--sage-d:#4B6B4F;--sage-l:#DDE8D6;--blush:#E3A9A4;--blush-l:#F6E0DC;--line:#E6DBC7;--warn:#B8794A;
+:root{--bg:#F6F0E4;--card:#FFFBF3;--ink:#2B372C;--mut:#6B766A;--sage:#7C9A7E;--sage-d:#4B6B4F;--sage-l:#DDE8D6;--blush:#E3A9A4;--blush-l:#F6E0DC;--line:#E6DBC7;--warn:#B8794A;--rose:#C9707A;--rose-l:#F6D9DC;--sky:#5F86A3;--ok:#CFE0C8;--mid:#F1E2B0;--low:#F2C4BE;--na:#EFE8D8;
 --fd:'Fraunces',Georgia,serif;--fb:'DM Sans',system-ui,-apple-system,'Segoe UI',sans-serif}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1C221E;--card:#252D27;--ink:#EDE8DB;--mut:#A3AE9F;--sage:#8DB08F;--sage-d:#A9CBAA;--sage-l:#2F3E31;--blush:#D49A95;--blush-l:#43302F;--line:#37423A;--warn:#D9A074;color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#1C221E;--card:#252D27;--ink:#EDE8DB;--mut:#A3AE9F;--sage:#8DB08F;--sage-d:#A9CBAA;--sage-l:#2F3E31;--blush:#D49A95;--blush-l:#43302F;--line:#37423A;--warn:#D9A074;color-scheme:dark}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1C221E;--card:#252D27;--ink:#EDE8DB;--mut:#A3AE9F;--sage:#8DB08F;--sage-d:#A9CBAA;--sage-l:#2F3E31;--blush:#D49A95;--blush-l:#43302F;--line:#37423A;--warn:#D9A074;--rose:#D98A93;--rose-l:#4A2F33;--sky:#8FB0C9;--ok:#3F5A42;--mid:#6B5F2E;--low:#6B3A36;--na:#2C332E;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#1C221E;--card:#252D27;--ink:#EDE8DB;--mut:#A3AE9F;--sage:#8DB08F;--sage-d:#A9CBAA;--sage-l:#2F3E31;--blush:#D49A95;--blush-l:#43302F;--line:#37423A;--warn:#D9A074;--rose:#D98A93;--rose-l:#4A2F33;--sky:#8FB0C9;--ok:#3F5A42;--mid:#6B5F2E;--low:#6B3A36;--na:#2C332E;color-scheme:dark}
 *{box-sizing:border-box}
 body{background:var(--bg);color:var(--ink);font-family:var(--fb);font-size:15px;line-height:1.5;padding-block:12px 80px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:30}
@@ -74,52 +73,55 @@ summary{cursor:pointer;font-family:var(--fd);font-weight:700;font-size:16px}
 .drops button{border:0;background:none;padding:0;cursor:pointer;width:34px;height:40px}
 #sync{font-size:12px;color:var(--mut)}
 @media (prefers-reduced-motion:no-preference){.bar i{transition:width .4s}.h{transition:background .15s}}
-</style>
-</head><body>
-<div class="wrap" id="app">
-<header><div><h1>THE 2027 RESET</h1><div class="tag">Nourish. Strengthen. Glow. Create. Evolve.</div></div>
-<div class="dn"><button class="btn s" data-a="day" data-v="-1" aria-label="Previous day">‹</button><b id="dl"></b><button class="btn s" data-a="day" data-v="1" aria-label="Next day">›</button><button class="btn s" data-a="day" data-v="0">Today</button></div></header>
-<nav id="nav"></nav>
-<main id="main"></main>
-<p class="note" id="sync">Starting…</p>
-</div>
+
+.row.sp{justify-content:space-between}
+.hero svg.m{width:96px;height:96px}
+.bar.big{height:12px}
+.tr{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--line)}
+.tr .tt{flex:1;min-width:0}
+.lk{background:none;border:0;padding:0;font:inherit;color:inherit;text-align:left;cursor:pointer}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:10px;overflow:hidden;flex:none}
+.seg button{border:0;border-right:1px solid var(--line);background:var(--bg);padding:7px 12px;min-width:40px;font-size:15px;cursor:pointer}
+.seg button:last-child{border-right:0}
+.seg button.on[data-v="1"]{background:var(--sage-d);color:var(--bg)}
+.seg button.on[data-v="3"]{background:var(--mid);color:var(--ink)}
+.seg button.on[data-v="2"]{background:var(--blush);color:var(--ink)}
+.ic{border:0;background:none;cursor:pointer;font-size:15px;padding:6px;color:var(--mut)}
+.ei{flex:1;min-width:0}
+.exb{padding:2px 0 10px 2px}.exb p{margin:6px 0}
+.fr{margin:10px 0}.fr textarea{margin-top:6px}
+.cl{list-style:none;padding:0;margin:6px 0}.cl li{padding:5px 0;border-bottom:1px solid var(--line)}
+.chip.on{background:var(--sage-d);color:var(--bg);border-color:var(--sage-d)}
+.tc{border:1px solid var(--line);border-radius:12px;padding:8px 12px;margin:8px 0;background:var(--bg)}
+.prow{margin:12px 0}
+.cal{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px;margin-top:10px}
+.cal .dh{font-size:11px;color:var(--mut);text-align:center}
+.cd{position:relative;min-height:46px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink);padding:3px 4px;font:inherit;font-size:13px;cursor:pointer;display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;text-align:left}
+.cd.out{opacity:.4}
+.cd.gr{background:var(--ok)}.cd.y{background:var(--mid)}.cd.r{background:var(--low)}.cd.n{background:var(--na)}
+.cd.td .n{font-weight:700;text-decoration:underline}
+.cd.sel{box-shadow:0 0 0 2px var(--sage-d)}
+.cd .mk{display:flex;gap:3px}
+.cd .pb{position:absolute;left:4px;right:4px;bottom:3px;height:5px;border-radius:3px;background:var(--rose)}
+.cd.pdy{background:var(--rose-l);border-color:var(--rose)}
+.cd.ps{background:var(--rose);border-color:var(--rose);color:#fff}
+.cd.pr{outline:2px dashed var(--rose);outline-offset:-3px}
+.dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--mut)}
+.dot.a{background:var(--sky)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12px;color:var(--mut);margin:10px 0}
+.legend span{display:inline-flex;align-items:center;gap:5px}
+.sw{display:inline-block;width:14px;height:14px;border-radius:4px;border:1px solid var(--line)}
+.sw.gr{background:var(--ok)}.sw.y{background:var(--mid)}.sw.r{background:var(--low)}.sw.n{background:var(--na)}
+.sw.ps{background:var(--rose)}.sw.pdy{background:var(--rose-l);border-color:var(--rose)}.sw.pr{border:2px dashed var(--rose)}
+.sw.pb{height:5px;background:var(--rose);border:0}
+.selbox{margin-top:10px;padding:10px;border-radius:12px;background:var(--bg);border:1px solid var(--line)}
+#toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(18px + env(safe-area-inset-bottom,0px));background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:12px;z-index:40;max-width:min(92vw,420px);font-size:14px}
+nav{scrollbar-width:none}nav::-webkit-scrollbar{display:none}
+</style></head><body>
+<div class="wrap" id="app"><header><div><h1>THE 2027 RESET</h1><div class="tag">Nourish. Strengthen. Glow. Create. Evolve.</div></div><div class="dn"><button class="btn s" data-a="day" data-v="-1" aria-label="Previous day">‹</button><b id="dl"></b><button class="btn s" data-a="day" data-v="1" aria-label="Next day">›</button><button class="btn s" data-a="day" data-v="0">Today</button></div></header>
+<nav id="nav" aria-label="Sections"></nav><main id="main"></main><p class="note" id="sync">Starting…</p></div>
+<div id="toast" role="status" hidden></div>
 <script>
-const $=s=>document.querySelector(s);
-const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const pad=n=>String(n).padStart(2,'0');
-const dk=d=>d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate());
-const pd=s=>{const[a,b,c]=s.split('-').map(Number);return new Date(a,b-1,c)};
-const add=(s,n)=>{const d=pd(s);d.setDate(d.getDate()+n);return dk(d)};
-const dow=s=>(pd(s).getDay()+6)%7;
-const DN=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
-const DF=['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
-const MN=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-const todayK=dk(new Date());
-const wkS=s=>add(s,-dow(s));
-const fmt=s=>{const d=pd(s);return DN[dow(s)]+', '+d.getDate()+' '+MN[d.getMonth()]+' '+d.getFullYear()};
-const sh=s=>{const d=pd(s);return d.getDate()+' '+MN[d.getMonth()]};
-const num=v=>{const n=parseFloat(v);return isNaN(n)?0:n};
-const avg=a=>a.length?a.reduce((x,y)=>x+y,0)/a.length:0;
-const r1=n=>Math.round(n*10)/10;
-const VEG=[1,1,0,1,0,0,0];
-const SLOTS=[['bf','Breakfast','7:30'],['ms','Mid-morning snack','11:00'],['ln','Lunch','13:30'],['es','Evening snack','17:00'],['dn','Dinner','20:00'],['bt','Bedtime snack (optional)','21:45']];
-/* name, qty, kcal, protein g, non-veg */
-const FOODS=[
-['Paneer bhurji','100 g paneer',330,19,0],['Oats + milk + banana','40 g oats, 200 ml milk, 1 banana',400,14,0],
-['Greek yogurt + almonds + dates','150 g, 10 almonds, 2 dates',250,17,0],['Poha + peanuts + curd','1 cup poha, 20 g peanuts, 100 g curd',390,13,0],
-['Idli + sambar','3 idli, 1 bowl',250,9,0],['Dosa + sambar','2 dosa, 1 bowl',330,9,0],
-['Toast + peanut butter','2 slices, 1 tbsp',250,9,0],['Milk','250 ml',150,8,0],['Banana peanut butter smoothie','1 banana, 1 tbsp PB, 250 ml milk',380,13,0],
-['Mango milkshake','1 mango, 250 ml milk',320,9,0],['Dates + walnuts','3 dates, 4 walnuts',200,3,0],['Roasted chana','30 g',110,6,0],
-['Fruit bowl','1.5 cups',120,1,0],['Roti + dal + sabzi + curd','2 roti, 1 cup dal, 1 cup veg, 100 g curd',560,22,0],
-['Rice + dal + curd','1 cup rice, 1 cup dal, 100 g curd',490,21,0],['Rice + rajma','1 cup rice, 1 cup rajma',430,17,0],
-['Roti + chana masala + curd','2 roti, 1 cup chana, 100 g curd',560,24,0],['Rice + soy chunk curry + curd','1 cup rice, 40 g dry soy, 100 g curd',520,30,0],
-['Roti + paneer sabzi','2 roti, 100 g paneer, 1 cup veg',560,28,0],['Paneer pulao + raita','1.5 cups, 100 g raita',480,18,0],['Khichdi + curd','1.5 cups, 100 g curd',440,17,0],
-['Yogurt bowl + seeds','150 g curd, 1 tbsp mixed seeds',160,9,0],
-['Egg bhurji + toast','3 eggs, 2 slices',470,26,1],['Boiled eggs (2)','2 eggs',155,13,1],['Dosa + sambar + 2 eggs','2 dosa, 2 eggs',490,22,1],
-['Idli + sambar + boiled egg','3 idli, 1 egg',330,15,1],['Veg omelette + toast','3 eggs, 2 slices',470,25,1],['Egg sandwich','2 eggs, 2 slices',330,17,1],
-['Chicken sandwich','80 g chicken, 2 slices',360,26,1],['Rice + chicken curry + veg','1 cup rice, 120 g chicken, 1 cup veg',540,35,1],
-['Rice + fish curry + veg','1 cup rice, 120 g fish, 1 cup veg',500,30,1],['Roti + egg curry','2 roti, 2 eggs',460,22,1],
-['Chicken pulao + raita','1.5 cups, 100 g chicken',560,32,1],['Roti + dal + palak','2 roti, 1 cup dal, 1 cup palak',510,21,1]];
 const MENU=[
 {bf:'Paneer bhurji',ms:'Greek yogurt + almonds + dates',ln:'Roti + dal + sabzi + curd',es:'Banana peanut butter smoothie',dn:'Rice + rajma',bt:'Milk'},
 {bf:'Oats + milk + banana',ms:'Fruit bowl',ln:'Rice + soy chunk curry + curd',es:'Roasted chana',dn:'Roti + paneer sabzi',bt:'Yogurt bowl + seeds'},
@@ -128,11 +130,6 @@ const MENU=[
 {bf:'Dosa + sambar + 2 eggs',ms:'Fruit bowl',ln:'Rice + fish curry + veg',es:'Chicken sandwich',dn:'Roti + egg curry',bt:'Yogurt bowl + seeds'},
 {bf:'Idli + sambar + boiled egg',ms:'Greek yogurt + almonds + dates',ln:'Rice + chicken curry + veg',es:'Banana peanut butter smoothie',dn:'Roti + dal + palak',bt:'Milk'},
 {bf:'Veg omelette + toast',ms:'Fruit bowl',ln:'Chicken pulao + raita',es:'Dates + walnuts',dn:'Khichdi + curd',bt:'Milk'}];
-const HAB=[['Morning',['Wake up on time','Drink water','Morning hygiene','Yoga or mobility','Scheduled workout','Posture exercises','Meditation','Breakfast','Sunscreen']],
-['Office & nutrition',['Carry lunch','Mid-morning snack','Lunch','Evening snack','Enough protein','Fruits & vegetables','Stay hydrated','Posture breaks']],
-['Evening & night',['Evening activity','Dinner','Skincare','Haircare (if scheduled)','Creative work or learning','Prep clothes & meals','Sleep on time']]];
-const HAIRDAY={2:'Scalp massage, 3–5 min',5:'Coconut oil on lengths before washing, if it suits you',6:'Wash, condition, yogurt mask 10–15 min, gentle detangle'};
-const MASK={2:'Plain aloe vera gel, 10 min (patch-test first)',6:'Plain unsweetened yogurt, 5–10 min (patch-test first)'};
 const EX=[
 ['Glutes + quads',[['Dumbbell squat',3,12,''],['Glute bridge',3,15,''],['Reverse lunge',2,10,'/leg'],['Donkey kick',2,15,'/leg'],['Fire hydrant',2,15,'/leg']]],
 ['Core + posture',[['Chin tuck',2,10,''],['Wall angel',2,12,''],['Bird dog',2,10,'/side'],['Dead bug',3,10,''],['Plank',2,20,'s'],['Wall posture hold',2,30,'s']]],
@@ -141,67 +138,14 @@ const EX=[
 ['Yoga + core stability',[['Cat-cow',1,10,''],['Cobra',1,20,'s'],["Child's pose",1,30,'s'],['Butterfly stretch',1,45,'s'],['Side plank',2,20,'s'],['Dead bug',2,10,''],['Glute stretch',1,30,'s']]],
 ['Sports, dance or light cardio',[]],['Recovery, gentle yoga, walking',[]]];
 const CUE={'Dumbbell squat':'Feet shoulder-width, chest tall, sit back and down, knees track over toes.','Glute bridge':'Heels close, ribs down, squeeze glutes at the top, no arching the low back.','Reverse lunge':'Step back softly, front knee over ankle, push through the front heel.','Donkey kick':'Hips square, kick heel to the ceiling, do not twist.','Fire hydrant':'Hips level, lift knee out to the side, slow lower.','Chin tuck':'Eyes level, glide head straight back, no tilting down.','Wall angel':'Back flat on the wall, slide arms up and down, ribs stay down.','Bird dog':'Opposite arm and leg, hips stay square, long spine.','Dead bug':'Low back gently pressed down, move slowly.','Plank':'Straight line from head to heels, glutes on.','Wall posture hold':'Head, shoulders and hips touch the wall, relaxed.','Dumbbell row':'Hinge forward, flat back, pull elbow to hip, squeeze shoulder blade.','Shoulder press':'Ribs down, press up, no shrugging.','Floor chest press':'Elbows about 45°, press smoothly.','Lateral raise':'Light weight, lift to shoulder height, soft elbows.','Wall push-up':'Body straight, chest to the wall, elbows 45°.','Dumbbell Romanian deadlift':'Soft knees, push hips back, flat back, feel hamstrings.','Hip thrust':'Shoulders on a sofa edge, chin tucked, drive through heels.','Split squat':'Long stance, drop straight down, front heel grounded.','Single-leg glute bridge':'Hips level, one foot down, squeeze glute.','Side-lying leg raise':'Toes forward, lift leg slightly back, slow.','Cat-cow':'Move with the breath, no forcing.','Cobra':'Low lift, shoulders away from ears.',"Child's pose":'Sit back toward heels, breathe.','Butterfly stretch':'Soles together, tall spine, gentle.','Side plank':'Elbow under shoulder, hips lifted, knees down if needed.','Glute stretch':'Figure-four on your back, gentle pull.'};
-const POST=['Chin tucks','Wall angels','Bird dogs','Chest stretch','Upper-back mobility'];
-const FACE=['Facial massage with moisturiser (1 min)','Relaxed smile practice (1 min)','Vowels A E I O U (2 min)','Read a paragraph with emotions (2 min)','Relax jaw and face (1 min)'];
-const SKA=['Cleanser','Moisturiser','Sunscreen','Lip care'],SKP=['Cleanser','Moisturiser','Lip care'];
-const MOODS=['','Great','Good','Okay','Low','Anxious','Tired'];
-const TABS=[['today','Today'],['food','Food'],['move','Move'],['glow','Glow'],['cycle','Cycle'],['prog','Progress'],['rev','Review'],['plan','My plan']];
-/* state */
-const defCfg=()=>({water:8,pmin:65,pmax:80,kcal:0,start:todayK});
-let S={meta:{body:[],cycle:[],rev:{},appts:[],cfg:defCfg(),_t:0},days:{}};
-function fixMeta(){const m=S.meta;m.cfg=Object.assign(defCfg(),m.cfg||{});['body','cycle','appts'].forEach(k=>m[k]=m[k]||[]);m.rev=m.rev||{};m.wk=m.wk||{};}
-try{const x=JSON.parse(localStorage.getItem('reset27')||'null');if(x&&x.meta){S=x;S.days=S.days||{};}}catch(e){}
-fixMeta();
-const EMPTY={h:{},m:[],ex:{},n:{},sk:{},hw:{},po:{},fc:{}};
-const peek=k=>S.days[k]||EMPTY;
-const dayOf=k=>{const d=S.days[k]||(S.days[k]={});for(const f of['h','ex','n','sk','hw','po','fc'])d[f]=d[f]||{};d.m=d.m||[];return d};
-const mk=k=>'m-'+k.slice(0,7);
-let col=null,busy=false,tm=0;const dirty=new Set();
-const setSync=t=>{const e=$('#sync');if(e)e.textContent=t};
-function touchDay(k){dayOf(k)._t=Date.now();dirty.add(mk(k));persist()}
-function touchMeta(){S.meta._t=Date.now();dirty.add('meta');persist()}
-function persist(){try{localStorage.setItem('reset27',JSON.stringify(S))}catch(e){}clearTimeout(tm);tm=setTimeout(flush,1200);if(!col)setSync('Saved on this phone only')}
-async function flush(){
- if(!col||busy||!dirty.size)return;busy=true;let ok=true;
- for(const id of[...dirty]){dirty.delete(id);
-  try{if(id==='meta')await col.doc('meta').set({v:S.meta});
-   else{const p=id.slice(2),days={};for(const k in S.days)if(k.startsWith(p))days[k]=S.days[k];await col.doc(id).set({days});}}
-  catch(e){dirty.add(id);ok=false;break}}
- busy=false;setSync(ok?'Saved to your private space':'Saved on this phone only, will retry');
- if(dirty.size){clearTimeout(tm);tm=setTimeout(flush,ok?300:15000)}}
-/* ---------- calculations ---------- */
-const habList=k=>{const hd=dow(k),o=[];HAB.forEach((g,gi)=>g[1].forEach((n,i)=>{if(n.startsWith('Haircare')&&!HAIRDAY[hd])return;o.push([gi+'_'+i,n])}));return o};
-function habPct(k){const d=peek(k),l=habList(k);let a=0,s=0;l.forEach(([id])=>{const v=d.h[id]||0;if(v==1)a++;else if(v==2)s++});const den=l.length-s;return den>0?Math.round(a/den*100):0}
-const anyHab=k=>Object.values(peek(k).h).some(v=>v==1);
-const exPlan=k=>EX[dow(k)][1];
-function prog(k){const n=Math.max(0,Math.floor((pd(k)-pd(S.meta.cfg.start))/864e5));return{w:Math.floor(n/7)%4+1,c:Math.floor(n/28)+1}}
-function tgt(e,w){const[,s,r,u]=e;let sets=s,reps=r;if(w==1)sets=Math.max(1,s-1);if(w==3)reps=r+(u=='s'?5:2);return sets+'×'+reps+(u==='s'?' s':u)}
-function exRatio(k){const d=peek(k),l=exPlan(k);if(!l.length)return num(d.sp)>0?1:0;return l.filter(e=>(d.ex[e[0]]||{}).d).length/l.length}
-function tot(k){const d=peek(k);let c=0,p=0,cb=0,f=0;d.m.forEach(m=>{c+=num(m.c);p+=num(m.p);cb+=num(m.cb);f+=num(m.ft)});c+=num(d.gc);p+=num(d.gp);return{c:Math.round(c),p:Math.round(p),cb:Math.round(cb),f:Math.round(f)}}
-const cnt=o=>Object.values(o||{}).filter(v=>v).length;
-const creat=k=>{const d=peek(k);return num(d.ed)+num(d.ac)+num(d.rd)};
-const lastStart=k=>{const l=S.meta.cycle.map(c=>c.s).filter(s=>s&&s<=k).sort();return l.length?l[l.length-1]:null};
-/* ---------- drawing ---------- */
 function mascot(p){const m=p>=100?3:p>=60?2:p>0?1:0;
  const mouth=['<path d="M52 70h16" stroke="#7A4A3A" stroke-width="2.6" stroke-linecap="round" fill="none"/>','<path d="M50 68q10 7 20 0" stroke="#7A4A3A" stroke-width="2.6" stroke-linecap="round" fill="none"/>','<path d="M47 66q13 15 26 0z" fill="#B5524F"/>','<path d="M47 66q13 15 26 0z" fill="#B5524F"/>'][m];
  const eyes=m==0?'<path d="M45 58q5 4 10 0M65 58q5 4 10 0" stroke="#3B2A2A" stroke-width="2.4" fill="none" stroke-linecap="round"/>':'<circle cx="50" cy="58" r="3" fill="#3B2A2A"/><circle cx="70" cy="58" r="3" fill="#3B2A2A"/>';
  const sp=m==3?'<path d="M16 24l3 7 7 3-7 3-3 7-3-7-7-3 7-3zM100 16l2 5 5 2-5 2-2 5-2-5-5-2 5-2z" style="fill:var(--blush)"/>':'';
  return '<svg class="m" viewBox="0 0 120 120" role="img" aria-label="Cartoon of you, cheering"><circle cx="60" cy="60" r="56" style="fill:var(--sage-l)"/><path d="M28 116c0-20 14-30 32-30s32 10 32 30z" style="fill:var(--sage)"/><circle cx="60" cy="22" r="10" fill="#3B2A2A"/><circle cx="60" cy="58" r="26" fill="#F2C7A5"/><path d="M34 56a26 26 0 0 1 52 0c-8-12-20-17-26-17s-18 5-26 17z" fill="#3B2A2A"/>'+eyes+'<ellipse cx="43" cy="66" rx="5" ry="3" style="fill:var(--blush)" opacity=".8"/><ellipse cx="77" cy="66" rx="5" ry="3" style="fill:var(--blush)" opacity=".8"/>'+mouth+'<rect x="8" y="94" width="26" height="6" rx="3" style="fill:var(--ink)"/><rect x="5" y="90" width="7" height="14" rx="3" style="fill:var(--ink)"/><rect x="30" y="90" width="7" height="14" rx="3" style="fill:var(--ink)"/>'+sp+'</svg>'}
 const drop=on=>'<svg viewBox="0 0 34 40" width="34" height="40" aria-hidden="true"><path d="M17 3C17 3 5 18 5 26a12 12 0 0 0 24 0C29 18 17 3 17 3z" style="fill:'+(on?'var(--sage)':'var(--bg)')+';stroke:var(--sage-d);stroke-width:1.6"/><circle cx="13" cy="26" r="1.6" style="fill:var(--ink)"/><circle cx="21" cy="26" r="1.6" style="fill:var(--ink)"/><path d="M13.5 30q3.5 3 7 0" style="stroke:var(--ink);fill:none;stroke-width:1.5;stroke-linecap:round"/></svg>';
-function ring(p){const c=2*Math.PI*34;return '<svg viewBox="0 0 84 84" width="84" height="84" role="img" aria-label="'+p+' percent of habits done"><circle cx="42" cy="42" r="34" fill="none" style="stroke:var(--line)" stroke-width="9"/><circle cx="42" cy="42" r="34" fill="none" style="stroke:var(--sage-d)" stroke-width="9" stroke-linecap="round" stroke-dasharray="'+(c*p/100)+' '+c+'" transform="rotate(-90 42 42)"/><text x="42" y="48" text-anchor="middle" style="fill:var(--ink);font:700 18px var(--fb)">'+p+'%</text></svg>'}
+
 const T0=(x,y,t,a)=>'<text x="'+x+'" y="'+y+'" text-anchor="'+(a||'middle')+'" style="fill:var(--mut);font:11px var(--fb)">'+esc(t)+'</text>';
-function line(pts,o={}){const W=640,H=200,L=38,R=12,T=14,B=26,vs=pts.map(p=>p.v).filter(v=>v!=null);
- if(!vs.length)return '<p class="note">Nothing to plot yet. It fills in as you log.</p>';
- let lo=o.min!=null?o.min:Math.min(...vs),hi=o.max!=null?o.max:Math.max(...vs);if(o.band){lo=Math.min(lo,o.band[0]);hi=Math.max(hi,o.band[1])}
- if(hi===lo){hi+=1;lo-=1}const pdg=(hi-lo)*.12;if(o.min==null)lo-=pdg;if(o.max==null)hi+=pdg;
- const x=i=>L+(pts.length>1?i*(W-L-R)/(pts.length-1):(W-L-R)/2),y=v=>T+(hi-v)*(H-T-B)/(hi-lo);let s='<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="'+esc(o.t||'chart')+'">';
- for(let i=0;i<4;i++){const v=lo+(hi-lo)*i/3;s+='<line x1="'+L+'" x2="'+(W-R)+'" y1="'+y(v)+'" y2="'+y(v)+'" style="stroke:var(--line)"/>'+T0(L-5,y(v)+4,r1(v),'end')}
- if(o.band)s+='<rect x="'+L+'" y="'+y(o.band[1])+'" width="'+(W-L-R)+'" height="'+(y(o.band[0])-y(o.band[1]))+'" style="fill:var(--sage);opacity:.18"/>';
- let d='';pts.forEach((p,i)=>{if(p.v==null){d+=' ';return}d+=(d.trim()===''||d.endsWith(' ')?'M':'L')+x(i)+' '+y(p.v)});
- s+='<path d="'+d.trim()+'" fill="none" style="stroke:var(--sage-d)" stroke-width="2.4" stroke-linejoin="round"/>';
- pts.forEach((p,i)=>{if(p.v!=null)s+='<circle cx="'+x(i)+'" cy="'+y(p.v)+'" r="3.4" style="fill:var(--sage-d)"><title>'+esc(p.l)+': '+p.v+'</title></circle>'});
- [0,Math.floor((pts.length-1)/2),pts.length-1].filter((v,i,a)=>a.indexOf(v)==i).forEach(i=>s+=T0(x(i),H-8,pts[i].l));
- return s+'</svg>'}
 function bars(pts,o={}){const W=640,H=180,L=34,R=8,T=12,B=24,mx=o.max||100,n=pts.length,bw=(W-L-R)/n,y=v=>T+(mx-v)*(H-T-B)/mx;
  let s='<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="'+esc(o.t||'bar chart')+'">';
  [0,mx/2,mx].forEach(v=>s+='<line x1="'+L+'" x2="'+(W-R)+'" y1="'+y(v)+'" y2="'+y(v)+'" style="stroke:var(--line)"/>'+T0(L-5,y(v)+4,Math.round(v),'end'));
@@ -209,202 +153,417 @@ function bars(pts,o={}){const W=640,H=180,L=34,R=8,T=12,B=24,mx=o.max||100,n=pts
  if(o.tl)s+='<line x1="'+L+'" x2="'+(W-R)+'" y1="'+y(o.tl)+'" y2="'+y(o.tl)+'" stroke-dasharray="5 4" style="stroke:var(--blush);stroke-width:2"/>';
  [0,Math.floor((n-1)/2),n-1].filter((v,i,a)=>a.indexOf(v)==i).forEach(i=>s+=T0(L+i*bw+bw/2,H-7,pts[i].l));
  return s+'</svg>'}
-/* ---------- form helpers ---------- */
+
+/* ---------- helpers ---------- */
+const $=s=>document.querySelector(s);
+const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const pad=n=>String(n).padStart(2,'0');
+const dk=d=>d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate());
+const pd=s=>{const[a,b,c]=s.split('-').map(Number);return new Date(a,b-1,c)};
+const add=(s,n)=>{const d=pd(s);d.setDate(d.getDate()+n);return dk(d)};
+const dow=s=>(pd(s).getDay()+6)%7;
+const diffD=(a,b)=>Math.round((pd(b)-pd(a))/864e5);
+const DN=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+const DF=['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
+const MN=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const todayK=dk(new Date());
+const wkS=s=>add(s,-dow(s));
+const fmt=s=>{const d=pd(s);return DN[dow(s)]+', '+d.getDate()+' '+MN[d.getMonth()]+' '+d.getFullYear()};
+const sh=s=>{const d=pd(s);return d.getDate()+' '+MN[d.getMonth()]};
+const num=v=>{const n=parseFloat(v);return isNaN(n)?0:n};
+const sum=a=>a.reduce((x,y)=>x+y,0);
+const avg=a=>a.length?sum(a)/a.length:0;
+const r1=n=>Math.round(n*10)/10;
+const median=a=>{const s=a.slice().sort((x,y)=>x-y),m=Math.floor(s.length/2);return s.length?(s.length%2?s[m]:(s[m-1]+s[m])/2):0};
+const uid=()=>Math.random().toString(36).slice(2,9);
+const addM=(ym,n)=>{const[y,m]=ym.split('-').map(Number),d=new Date(y,m-1+n,1);return d.getFullYear()+'-'+pad(d.getMonth()+1)};
+const mLabel=ym=>MN[+ym.slice(5)-1]+' '+ym.slice(0,4);
 const gv=(d,p)=>p.split('.').reduce((o,k)=>o==null?o:o[k],d);
-const inp=(k,l,f,t,x)=>'<label class="f">'+l+'<input data-d="'+f+'" type="'+(t||'text')+'" value="'+esc(gv(peek(k),f)??'')+'" '+(x||'')+'></label>';
-const sel=(k,l,f,o)=>'<label class="f">'+l+'<select data-d="'+f+'">'+o.map(v=>'<option value="'+esc(v)+'"'+(String(gv(peek(k),f)??'')===String(v)?' selected':'')+'>'+esc(v===''?'–':v)+'</option>').join('')+'</select></label>';
-const ta=(k,l,f)=>'<label class="f">'+l+'<textarea data-d="'+f+'">'+esc(gv(peek(k),f)??'')+'</textarea></label>';
-const ckb=(k,l,f)=>'<label class="ck"><input type="checkbox" data-d="'+f+'"'+(gv(peek(k),f)?' checked':'')+'>'+l+'</label>';
+function setPath(o,p,v){const a=p.split('.');a.slice(0,-1).forEach(x=>o=o[x]||(o[x]={}));o[a[a.length-1]]=v}
 const tile=(l,v,p)=>'<div class="tile"><small>'+l+'</small><b>'+v+'</b>'+(p!=null?'<div class="bar"><i style="width:'+Math.min(100,p)+'%"></i></div>':'')+'</div>';
-/* ---------- today ---------- */
-function sumHtml(k){const d=peek(k),p=habPct(k),t=tot(k),c=S.meta.cfg,ex=exRatio(k),msg=p>=100?'A full day. Rest well tonight.':p>=60?'You are doing great. Keep it gentle.':p>0?'Nice start. Small steps count.':'A fresh day. Start with one small thing.';
- const ls=lastStart(k),cy=ls?'Day '+(Math.round((pd(k)-pd(ls))/864e5)+1)+' of cycle':'Not logged';
- const sk=cnt(d.sk),po=cnt(d.po),cr=creat(k);
- return '<div class="hero">'+mascot(p)+'<div class="t"><h2>'+esc(DF[dow(k)])+', your reset day</h2><p style="margin:0 0 6px">'+msg+'</p><span class="note">Habits done, skipped ones not counted against you</span></div>'+ring(p)+'</div><div class="tiles">'+
- tile('Workout',EX[dow(k)][1].length||dow(k)>4?(ex>=.5?'Done':ex>0?'Partly':'Not yet'):'–',ex*100)+
- tile('Protein',t.p+' g',Math.round(t.p/c.pmin*100))+tile('Water',(d.w||0)+' / '+c.water,Math.round((d.w||0)/c.water*100))+
- tile('Sleep',d.sleep?d.sleep+' h':'–',d.sleep?Math.round(num(d.sleep)/8*100):0)+tile('Skincare',sk+' / 7',Math.round(sk/7*100))+
- tile('Posture',po+' / 5',po*20)+tile('Meditation',num(d.med)+' min',Math.min(100,num(d.med)*10))+tile('Creative',cr+' min',Math.min(100,cr/60*100))+tile('Cycle',cy)+'</div>'}
-function vToday(k){
- const ws=wkS(k);let wk='<div class="wk">';for(let i=0;i<7;i++){const dd=add(ws,i),p=habPct(dd);wk+='<button data-a="go" data-v="'+dd+'"'+(dd===k?' aria-current="true"':'')+' aria-label="'+DF[i]+' '+p+' percent"><div class="b2"><i style="height:'+Math.max(3,p*.36)+'px"></i></div>'+DN[i]+'<br>'+pd(dd).getDate()+'</button>'}wk+='</div>';
- let h='<div class="card" id="sum">'+sumHtml(k)+'</div><div class="card"><h3>This week</h3>'+wk+'</div><div class="card"><h2>Daily habits</h2><p class="note">Tap once for done, twice for skipped (honest and fine), three times to clear.'+(HAIRDAY[dow(k)]?' Today’s haircare: '+HAIRDAY[dow(k)]+'.':'')+'</p>';
- const d=peek(k);HAB.forEach((g,gi)=>{h+='<h3 style="margin-top:12px">'+g[0]+'</h3><div class="hab">';g[1].forEach((n,i)=>{if(n.startsWith('Haircare')&&!HAIRDAY[dow(k)])return;const id=gi+'_'+i,s=d.h[id]||0;h+='<button class="h" data-a="hab" data-v="'+id+'" data-s="'+s+'"><span class="c">'+(s==1?'✓':s==2?'–':'')+'</span><span>'+n+(s==2?' (skipped)':'')+'</span></button>'});h+='</div>'});
- h+='</div><div class="card"><h2>Daily check-in</h2><div class="g">'+inp(k,'Wake-up time','wake','time')+inp(k,'Sleep duration (hours)','sleep','number','min="0" max="14" step="0.25"')+inp(k,'Energy (1–10)','en','number','min="1" max="10"')+sel(k,'Mood','mood',MOODS)+
- inp(k,'Meditation (minutes)','med','number','min="0"')+inp(k,'Video editing (minutes)','ed','number','min="0"')+inp(k,'Acting, dance or communication (minutes)','ac','number','min="0"')+inp(k,'Reading or learning (minutes)','rd','number','min="0"')+
- inp(k,'Any discomfort or pain','dis')+inp(k,'Other symptoms','sym')+inp(k,'Today’s overall feeling (1–10)','feel','number','min="1" max="10"')+'</div></div><div class="card soft"><h2>Reflection</h2><div class="g">'+
- ta(k,'One thing I did well','n.well')+ta(k,'One thing I could improve','n.imp')+ta(k,'One thing I am grateful for','n.grat')+ta(k,'Tomorrow’s priority','n.pri')+'</div></div>';
+/* ---------- fixed plan data ---------- */
+const VEG=[1,1,0,1,0,0,0];
+const SLOTS=[['bf','Breakfast','7:30 AM'],['ms','Mid-morning snack','11 AM'],['ln','Lunch','1:30 PM'],['es','Evening snack','5 PM'],['dn','Dinner','8 PM']];
+const CATS=[['food','Food'],['move','Move'],['glow','Glow'],['pers','Personal']];
+const HAIRREG=[5,6];
+const MASKD={2:'Plain aloe vera gel, 10 min',6:'Plain unsweetened yogurt, 5–10 min'};
+const PDL=['Creative time: editing, acting or reading','Creative time: editing, acting or reading','Creative time: editing, acting or reading','Creative time: editing, acting or reading','Creative time: editing, acting or reading','Acting, expressions and one small edit','Reading, journaling and planning'];
+const POST=['Chin tucks','Wall angels','Bird dogs','Doorway chest stretch','Shoulder-blade squeezes'];
+const FACE=['Facial massage while moisturising (1 min)','Relaxed smile practice (1 min)','Vowels A E I O U (2 min)','Read a paragraph with different emotions (2 min)','Relax jaw and face (1 min)'];
+const MEDST=['To book','Booked','Completed','Reschedule'];
+const DENST=['Pending','Appointment booked','Completed'];
+const BRST=['Not assessed yet','Consultation booked','Consultation done: braces advised','Consultation done: braces not needed','In treatment','Completed'];
+const HAIRDO=[['wash','Wash'],['shampoo','Shampoo'],['conditioner','Conditioner'],['mask','Mask'],['oil','Oiling'],['detangle','Gentle detangle']];
+const ACTS=['Walk','Skating','Dance','Badminton','Zumba','Run','Cycling'];
+const exRest=e=>e;
+const prog=k=>{const n=Math.max(0,Math.floor((pd(k)-pd(S.meta.cfg.start))/864e5));return{w:Math.floor(n/7)%4+1,c:Math.floor(n/28)+1}};
+const tgt=(e,w)=>{const[,s,r,u]=e;let sets=s,reps=r;if(w==1)sets=Math.max(1,s-1);if(w==3)reps=r+(u=='s'?5:2);return sets+'×'+reps+(u==='s'?' s':u)};
+/* ---------- state ---------- */
+const KEY='reset27';
+const DENT=()=>({teeth:[0,1,2,3,4,5,6].map(i=>({l:'Tooth '+(i+1),st:i?'Pending':'Completed',appt:'',done:'',nt:''})),br:{st:'Not assessed yet',d:'',nt:''}});
+const defMeta=()=>({v:2,body:[],cycle:[],appts:[],rev:{},wk:{},cfg:{start:todayK,name:''},rt:[],ev:{},med:[],dent:DENT(),_t:0});
+let S={meta:defMeta(),days:{}};
+function fixMeta(){const m=S.meta,d0=defMeta();for(const k in d0)if(m[k]==null)m[k]=d0[k];
+ m.cfg=Object.assign({start:todayK,name:''},m.cfg||{});
+ if(!m.med2){(m.appts||[]).forEach(a=>m.med.push({id:uid(),n:a.n||'Appointment',cl:'',pl:a.d||'',tk:'',st:'Booked',nt:'',fu:''}));m.med2=1}
+ if(!m.dent||!Array.isArray(m.dent.teeth)||!m.dent.br)m.dent=DENT();
+ m.cycle=(m.cycle||[]).filter(c=>c&&c.s);m.cycle.forEach(c=>{if(!c.id)c.id=uid();if(c.e==null)c.e='' });
+ m.cycle.sort((a,b)=>a.s<b.s?-1:1);m.med.forEach(x=>{if(!x.id)x.id=uid()});m.v=2}
+function migDay(k,d){if(d.v2){d.st=d.st||{};d.meal=d.meal||{};d.fs=d.fs||{};d.ct=d.ct||[];return}
+ d.v2=1;d.st=d.st||{};d.meal=d.meal||{};d.fs=d.fs||{};d.ct=d.ct||[];
+ if(Array.isArray(d.m)&&d.m.length&&!Object.keys(d.meal).length)d.m.forEach(m=>{const s=m.s==='bt'?'dn':m.s;d.meal[s]=(d.meal[s]?d.meal[s]+', ':'')+m.f+(m.q?' ('+m.q+')':'')});
+ if(d.ex)Object.keys(d.ex).forEach(n=>{if(d.ex[n]&&d.ex[n].d&&!d.st['x:'+n])d.st['x:'+n]=1});
+ const H=d.h||{},map={'0_3':'mr','0_5':'pos','0_8':'am','2_2':'pm','2_4':'pd'};
+ Object.keys(map).forEach(h=>{if(H[h]&&!d.st[map[h]])d.st[map[h]]=H[h]==1?1:2});
+ if(H['0_4']){const v=H['0_4']==1?1:2;EX[dow(k)][1].forEach(e=>{if(!d.st['x:'+e[0]])d.st['x:'+e[0]]=v})}
+ const hw=d.hw||{};if(hw.wash||hw.sh||hw.co||hw.mk||hw.oil)d.hc={on:1,did:{wash:!!hw.wash,shampoo:!!hw.sh,conditioner:!!hw.co,mask:!!hw.mk,oil:!!hw.oil}};
+ const n=d.n||{},p=[n.well&&'Went well: '+n.well,n.imp&&'To improve: '+n.imp,n.grat&&'Grateful: '+n.grat,n.pri&&'Tomorrow: '+n.pri].filter(Boolean);
+ if(p.length&&!d.note)d.note=p.join('\n')}
+function migrateAll(){fixMeta();Object.keys(S.days).forEach(k=>{if(S.days[k]&&typeof S.days[k]==='object')migDay(k,S.days[k]);else delete S.days[k]})}
+try{const x=JSON.parse(localStorage.getItem(KEY)||'null');if(x&&x.meta){S=x;S.days=S.days||{}}}catch(e){}
+migrateAll();
+const EMPTY={st:{},meal:{},fs:{},ct:[]};
+const peek=k=>S.days[k]||EMPTY;
+const dayOf=k=>{const d=S.days[k]||(S.days[k]={v2:1});d.st=d.st||{};d.meal=d.meal||{};d.fs=d.fs||{};d.ct=d.ct||[];return d};
+const setSync=t=>{const e=$('#sync');if(e)e.textContent=t};
+function save(){S.meta._t=Date.now();try{localStorage.setItem(KEY,JSON.stringify(S));setSync('Saved on this phone only')}catch(e){setSync('Could not save: phone storage is full or blocked')}}
+let toastT=0;function toast(t){const e=$('#toast');if(!e)return;e.textContent=t;e.hidden=false;clearTimeout(toastT);toastT=setTimeout(()=>{e.hidden=true},4200)}
+/* ---------- day items and scoring ---------- */
+function items(k){const hd=dow(k),d=peek(k),L=[];
+ SLOTS.forEach(([s,n])=>L.push({id:'f:'+s,c:'food',t:n}));
+ L.push({id:'mr',c:'move',t:'Morning yoga and mobility'});
+ const ex=EX[hd][1];
+ if(ex.length)ex.forEach(e=>L.push({id:'x:'+e[0],c:'move',t:e[0],ex:e}));
+ else L.push({id:hd==5?'sport':'rec',c:'move',t:hd==5?'Sport, skating or dance':'Gentle yoga and a walk'});
+ L.push({id:'pos',c:'move',t:'Posture routine'});
+ L.push({id:'am',c:'glow',t:'Morning skincare'},{id:'pm',c:'glow',t:'Night skincare'});
+ if(MASKD[hd])L.push({id:'mask',c:'glow',t:'Face mask',opt:1});
+ L.push({id:'hair',c:'glow',t:'Haircare',opt:1});
+ L.push({id:'pd',c:'pers',t:PDL[hd]});
+ L.push({id:'face',c:'pers',t:'Expression practice',opt:1});
+ (d.ct||[]).forEach(t=>L.push({id:'c:'+t.id,c:t.c,t:t.t,cu:1}));
+ S.meta.rt.forEach(t=>{if(t.days.includes(hd)&&k>=t.from)L.push({id:'c:'+t.id,c:t.c,t:t.t,cu:1,rt:1})});
+ return L}
+function stOf(k,it){const d=peek(k),i=it.id;
+ if(i.startsWith('f:')){const s=i.slice(2);return d.fs[s]===2?2:((d.meal[s]||'').trim()?1:0)}
+ if(i==='hair')return d.hc&&d.hc.on===1?1:0;
+ return d.st[i]||0}
+function score(k){const L=items(k),c={};CATS.forEach(([x])=>c[x]={num:0,den:0,ans:0});
+ let num=0,den=0,dn=0,pa=0,sk=0,tr=false;
+ L.forEach(it=>{const s=stOf(k,it),q=c[it.c]||(c[it.c]={num:0,den:0,ans:0});
+  if(s){tr=true;q.ans++}
+  if(s==2){sk++;return}
+  if(it.opt&&!s)return;
+  den++;q.den++;
+  if(s==1){num++;dn++;q.num++}else if(s==3){num+=.5;pa++;q.num+=.5}});
+ const d=peek(k);if(d.hc&&d.hc.on===0)tr=true;
+ return{num,den,dn,pa,sk,tr,c,pct:den?Math.round(num/den*100):0}}
+function aggS(k,ids){const s=items(k).filter(it=>ids.includes(it.id)).map(it=>stOf(k,it)).filter(x=>x!=2);
+ if(!ids.length)return 0;if(!s.length)return 2;if(s.every(x=>x==1))return 1;return s.some(x=>x==1||x==3)?3:0}
+const colr=(k,sc)=>!sc.tr?'n':(k>=todayK&&sc.pct<35)?'n':sc.pct>=70?'gr':sc.pct>=35?'y':'r';
+/* ---------- period prediction ---------- */
+function predictCycle(){
+ const cy=S.meta.cycle,st=[...new Set(cy.map(c=>c.s))].sort(),gaps=[];
+ for(let i=1;i<st.length;i++)gaps.push({from:st[i-1],to:st[i],n:diffD(st[i-1],st[i])});
+ gaps.forEach(g=>g.ok=g.n>=18&&g.n<=60);
+ const ok=gaps.filter(g=>g.ok).slice(-6),last=st[st.length-1]||null;
+ const pl=cy.filter(c=>c.e).map(c=>diffD(c.s,c.e)+1).filter(n=>n>=1&&n<=15).slice(-6);
+ const P={n:st.length,gaps,last,plen:pl.length?Math.round(avg(pl)):5,plenLogged:pl.length>0,mode:'none',used:[],mean:null,sd:null,lo:null,hi:null,mid:null,conf:'',late:0};
+ if(!last)return P;
+ let mean,half,used=ok;
+ if(ok.length<3){P.mode='default';mean=29;half=1;used=[]}
+ else{const med=median(ok.map(g=>g.n));used=ok.filter(g=>Math.abs(g.n-med)<=10);if(used.length<3)used=ok;
+  const w=used.map((g,i)=>i+1);mean=sum(used.map((g,i)=>g.n*w[i]))/sum(w);
+  const m2=avg(used.map(g=>g.n));P.sd=Math.sqrt(avg(used.map(g=>(g.n-m2)*(g.n-m2))));
+  half=Math.min(8,Math.max(2,Math.round(P.sd)));P.mode='personal'}
+ P.mean=mean;P.used=used;P.half=half;
+ P.mid=add(last,Math.round(mean));P.lo=add(last,Math.round(mean)-half);P.hi=add(last,Math.round(mean)+half);
+ P.conf=P.mode==='default'?'Low: standard estimate':P.sd<=2&&used.length>=4?'Good':P.sd<=4?'Fair':'Low: your cycles vary a lot';
+ if(todayK>P.hi)P.late=diffD(P.hi,todayK);
+ return P}
+/* ---------- calendar helpers ---------- */
+const inPeriod=k=>S.meta.cycle.some(c=>c.e?k>=c.s&&k<=c.e:k===c.s);
+const isStart=k=>S.meta.cycle.some(c=>c.s===k);
+function grid(ym,fn){const[y,m]=ym.split('-').map(Number),f=ym+'-01',st=add(f,-dow(f)),n=new Date(y,m,0).getDate(),rows=Math.ceil((dow(f)+n)/7);
+ let h='<div class="cal">'+DN.map(x=>'<div class="dh">'+x[0]+'</div>').join('');
+ for(let i=0;i<rows*7;i++){const k=add(st,i);h+=fn(k,k.slice(0,7)===ym)}
+ return h+'</div>'}
+function apptDates(){const o={};const a=(d,t)=>{if(d)(o[d]=o[d]||[]).push(t)};
+ S.meta.med.forEach(m=>{a(m.pl,m.n||'Appointment');a(m.tk,(m.n||'Appointment')+' (taken)');a(m.fu,(m.n||'Appointment')+' follow-up')});
+ S.meta.dent.teeth.forEach(t=>{a(t.appt,t.l+' dental');a(t.done,t.l+' completed')});
+ const b=S.meta.dent.br;a(b.d,'Braces: '+b.st);return o}
+function careBits(){const L=[];
+ S.meta.med.forEach(m=>{if(m.st!=='Completed')L.push({d:m.pl||m.tk||'',t:m.n||'Appointment',s:m.st})});
+ S.meta.dent.teeth.forEach(t=>{if(t.st==='Appointment booked')L.push({d:t.appt||'',t:t.l+' treatment',s:'Booked'})});
+ L.sort((a,b)=>(a.d||'9')<(b.d||'9')?-1:1);return L}
+const dentDone=()=>S.meta.dent.teeth.filter(t=>t.st==='Completed').length;
+
+/* ---------- UI state and components ---------- */
+let cur=todayK,tab='today',editId='',armed='';
+const openSet=new Set();
+const seg=(ids,s)=>'<div class="seg" role="group" aria-label="Status">'+[[1,'✓','Done'],[3,'½','Partly'],[2,'✕','Skipped']].map(([v,i,l])=>'<button data-a="st" data-ids="'+esc([].concat(ids).join('|'))+'" data-v="'+v+'" class="'+(s==v?'on':'')+'" aria-pressed="'+(s==v)+'" aria-label="'+l+'" title="'+l+'">'+i+'</button>').join('')+'</div>';
+function arow(k,ids,title,sub,tb){return '<div class="tr"><button class="lk tt" data-a="tab" data-v="'+tb+'"><b>'+esc(title)+'</b>'+(sub?'<br><small class="note">'+esc(sub)+'</small>':'')+'</button>'+seg(ids,aggS(k,ids))+'</div>'}
+function trow(k,id,title,sub,body){const s=stOf(k,{id}),op=body&&openSet.has(id);
+ return '<div class="exr"><div class="tr">'+(body?'<button class="lk tt" data-a="tg" data-v="'+esc(id)+'" aria-expanded="'+!!op+'"><b>'+title+'</b>'+(sub?'<br><small class="note">'+sub+'</small>':'')+' <span class="note">'+(op?'▴':'▾')+'</span></button>':'<span class="tt"><b>'+title+'</b>'+(sub?'<br><small class="note">'+sub+'</small>':'')+'</span>')+seg(id,s)+'</div>'+(op?'<div class="exb">'+body+'</div>':'')+'</div>'}
+function crow(k,it){const s=stOf(k,it),ed=editId===it.id;
+ const mid=ed?'<input class="ei" data-ed="'+esc(it.id)+'" value="'+esc(it.t)+'" aria-label="Task name"><button class="btn s p" data-a="edsave" data-v="'+esc(it.id)+'">Save</button>'
+  :'<span class="tt">'+esc(it.t)+(it.rt?' <small class="note">(repeats)</small>':'')+'</span>'+seg(it.id,s)+'<button class="ic" data-a="edit" data-v="'+esc(it.id)+'" aria-label="Edit task">✎</button>';
+ return '<div class="tr">'+mid+'<button class="ic" data-a="rmc" data-v="'+esc(it.id)+'" aria-label="Remove task">'+(armed==='rm'+it.id?'Sure?':'✕')+'</button></div>'}
+function rotTable(){return '<div class="tw"><table><tr><th>Day</th><th>Type</th><th>Breakfast</th><th>Lunch</th><th>Dinner</th></tr>'+DF.map((n,i)=>'<tr><td>'+n+'</td><td><span class="pill'+(VEG[i]?'':' nv')+'">'+(VEG[i]?'Veg':'Non-veg')+'</span></td><td>'+MENU[i].bf+'</td><td>'+MENU[i].ln+'</td><td>'+MENU[i].dn+'</td></tr>').join('')+'</table></div>'}
+const det=(oid,t,b)=>'<details data-oid="'+oid+'"><summary>'+t+'</summary>'+b+'</details>';
+/* ---------- Today ---------- */
+function vToday(k){const hd=dow(k),sc=score(k),isT=k===todayK,d=peek(k),hc=d.hc;
+ const hr=new Date().getHours(),gr=hr<12?'Good morning':hr<17?'Good afternoon':'Good evening',nm=S.meta.cfg.name?', '+esc(S.meta.cfg.name):'';
+ const ex=EX[hd][1],wid=ex.length?ex.map(e=>'x:'+e[0]):[hd==5?'sport':'rec'];
+ const meals=SLOTS.filter(s=>stOf(k,{id:'f:'+s[0]})==1).length;
+ let h='<div class="card"><div class="hero">'+mascot(sc.pct)+'<div class="t"><h2>'+(isT?gr+nm:'Viewing '+DF[hd])+'</h2><p class="note" style="margin:2px 0 8px">'+fmt(k)+'</p><div class="bar big"><i style="width:'+sc.pct+'%"></i></div><p style="margin:6px 0 0"><b>'+sc.pct+'%</b> of today'+(sc.tr?' · '+sc.dn+' done'+(sc.pa?', '+sc.pa+' partly':'')+(sc.sk?', '+sc.sk+' skipped':''):' · nothing marked yet')+'</p></div></div><div class="tiles">'+
+ CATS.map(([c,n])=>{const q=sc.c[c],p=q.den?Math.round(q.num/q.den*100):null;return tile(n,p==null?'–':p+'%',p==null?0:p)}).join('')+'</div></div>';
+ h+='<div class="card"><div class="row sp"><h2 style="margin:0">Today’s focus</h2><span class="note">✓ done · ½ partly · ✕ skipped</span></div>';
+ h+=arow(k,wid,'Workout: '+EX[hd][0],ex.length?ex.length+' exercises':'','move');
+ h+=arow(k,['mr','pos'],'Morning routine and posture','Yoga, mobility, posture','move');
+ h+=arow(k,['am','pm'],'Skincare','Morning and night','glow');
+ h+='<div class="tr"><button class="lk tt" data-a="tab" data-v="food"><b>Meals</b><br><small class="note">'+meals+' of 5 written down</small></button><span class="pill">Open Food</span></div>';
+ h+='<div class="tr"><span class="tt"><b>'+esc(PDL[hd])+'</b><br><small class="note">Personal</small></span>'+seg('pd',stOf(k,{id:'pd'}))+'</div>';
+ if(HAIRREG.includes(hd)||(hc&&hc.on===1))h+='<div class="tr"><span class="tt"><b>Haircare today?</b><br><small class="note">'+(HAIRREG.includes(hd)?'Regular day. No is fine.':'Extra haircare')+'</small></span><div class="seg"><button data-a="hy" data-v="1" class="'+(hc&&hc.on===1?'on':'')+'">Yes</button><button data-a="hn" data-v="2" class="'+(hc&&hc.on===0?'on':'')+'">No</button></div></div>';
+ items(k).filter(it=>it.cu).forEach(it=>h+=crow(k,it));
+ h+='</div><div class="card"><h3>Add my own task</h3><div class="row"><input id="nt_t" placeholder="e.g. 10-minute walk, call dentist" style="flex:1;min-width:160px" aria-label="New task"><button class="btn p" data-a="addt">Add</button></div>'+
+ det('nt','<span class="note">Category and repeat</span>','<div class="g" style="margin-top:8px"><label class="f">Category<select id="nt_c">'+CATS.map(c=>'<option value="'+c[0]+'"'+(c[0]==='pers'?' selected':'')+'>'+c[1]+'</option>').join('')+'</select></label><label class="f">Repeat<select id="nt_r"><option value="0">Just this day</option><option value="d">Every day</option><option value="w">Weekdays</option><option value="e">Weekends</option></select></label></div>')+'</div>';
+ const cb=careBits(),dd=dentDone(),tot=S.meta.dent.teeth.length;
+ h+='<div class="card"><div class="row sp"><h3 style="margin:0">Care reminders</h3><button class="btn s" data-a="tab" data-v="care">Open Care</button></div>'+
+ '<p class="note" style="margin:6px 0">Dental repairs: '+dd+' of '+tot+' completed</p>'+(cb.length?'<ul class="cl">'+cb.slice(0,4).map(x=>'<li>'+esc(x.t)+' <span class="pill'+(x.d&&x.d<todayK?' nv':'')+'">'+esc(x.s)+(x.d?' · '+sh(x.d)+(x.d<todayK?' (past)':''):'')+'</span></li>').join('')+'</ul>':'<p class="note">No pending appointments. Add them in Care any time.</p>')+'</div>';
  return h}
-/* ---------- food ---------- */
-function vFood(k){const d=peek(k),hd=dow(k),veg=VEG[hd],c=S.meta.cfg,t=tot(k),menu=MENU[hd];
- const fd=FOODS.filter(f=>!veg||!f[4]);
- let h='<div class="card"><div class="row"><h2 style="margin:0">Food</h2><span class="pill'+(veg?'':' nv')+'">'+(veg?'Vegetarian day':'Non-vegetarian day')+'</span></div><p class="note">Tap a suggestion to log it with a starting portion, then edit the numbers to match what you actually ate. Values are approximate.</p>';
- SLOTS.forEach(([s,n,tm])=>{const sug=menu[s],es=d.m.map((m,i)=>[m,i]).filter(x=>x[0].s===s);
-  h+='<h3 style="margin-top:12px">'+n+' <span class="note">'+tm+'</span></h3><div class="chips"><button class="chip" data-a="sug" data-v="'+s+'" data-f="'+esc(sug)+'">+ '+esc(sug)+'</button></div>';
-  if(es.length){h+='<div class="tw"><table><tr><th>Food</th><th>Quantity</th><th>kcal</th><th>Protein g</th><th>Notes</th><th></th></tr>';
-   es.forEach(([m,i])=>h+='<tr><td>'+esc(m.f)+'</td><td><input data-m="'+i+'.q" value="'+esc(m.q)+'"></td><td><input data-m="'+i+'.c" type="number" value="'+esc(m.c)+'"></td><td><input data-m="'+i+'.p" type="number" value="'+esc(m.p)+'"></td><td><input data-m="'+i+'.n" value="'+esc(m.n||'')+'"></td><td><button class="btn s b" data-a="delm" data-v="'+i+'" aria-label="Remove">✕</button></td></tr>');
-   h+='</table></div>'}});
- h+='</div><div class="card"><h3>Add your own food</h3><datalist id="fl">'+fd.map(f=>'<option value="'+esc(f[0])+'">').join('')+'</datalist><div class="g">'+
- '<label class="f">Meal<select id="a_s">'+SLOTS.map(s=>'<option value="'+s[0]+'">'+s[1]+'</option>').join('')+'</select></label><label class="f">Food<input id="a_f" list="fl" data-a2="fill"></label><label class="f">Quantity<input id="a_q"></label><label class="f">kcal<input id="a_c" type="number"></label><label class="f">Protein g<input id="a_p" type="number"></label><label class="f">Carbs g (optional)<input id="a_cb" type="number"></label><label class="f">Fats g (optional)<input id="a_ft" type="number"></label></div><p><button class="btn p" data-a="addm">Add to today</button></p></div>';
- h+='<div class="card"><h3>Mass gainer (optional)</h3><p class="note">Not required. Read serving size, calories and protein from the label on your own tub, and start with about a quarter serving to see how your stomach feels. Whatever you enter is added to your totals.</p><div class="g">'+inp(k,'Amount taken (g)','gg','number','min="0"')+inp(k,'kcal in that amount','gc','number','min="0"')+inp(k,'Protein in that amount (g)','gp','number','min="0"')+'</div></div>';
- const lo=num(c.kcal)?Math.round(num(c.kcal)+150):0,hi2=num(c.kcal)?Math.round(num(c.kcal)+250):0;
- h+='<div class="card soft"><h2>Today’s totals</h2><div class="tiles" id="tt">'+totHtml(k)+'</div><p id="ev">'+evalDay(k)+'</p>'+(lo?'<p class="note">Your gentle target range: '+lo+'–'+hi2+' kcal (maintenance + 150–250). Judge by your weekly average, not one day.</p>':'<p class="note">Add your estimated maintenance calories in My plan to see a gentle calorie range.</p>')+
- '<h3>Fruit & vegetable servings</h3><div class="row"><button class="btn s" data-a="fv" data-v="-1">−</button><b>'+(d.fv||0)+'</b><button class="btn s" data-a="fv" data-v="1">+</button></div><h3 style="margin-top:12px">Water ('+c.water+' glasses of about 250 ml)</h3><div class="drops">';
- for(let i=1;i<=c.water;i++)h+='<button data-a="w" data-v="'+i+'" aria-label="Glass '+i+'">'+drop(i<=(d.w||0))+'</button>';
- return h+'</div></div>'}
-function totHtml(k){const t=tot(k),c=S.meta.cfg;return tile('Calories',t.c+' kcal')+tile('Protein',t.p+' g of '+c.pmin+'–'+c.pmax,Math.round(t.p/c.pmin*100))+tile('Carbs',t.cb?t.cb+' g':'–')+tile('Fats',t.f?t.f+' g':'–')}
-function evalDay(k){const d=peek(k),t=tot(k),c=S.meta.cfg;if(!d.m.length&&!num(d.gc))return 'Nothing logged yet. Log what you eat, it does not have to be perfect.';
- const sl=new Set(d.m.map(m=>m.s)).size,m=[];if(t.p<c.pmin)m.push('Protein is under '+c.pmin+' g. Paneer, curd, eggs, dal or soy chunks help.');if(sl<4)m.push('Try to cover most meal slots, steady eating beats one big meal.');if((d.fv||0)<3)m.push('Aim for 3 or more fruit and vegetable servings.');
- return m.length?m.join(' '):'Balanced day: protein, variety and fruit and vegetables are on track. More calories alone would not make it a better day.'}
-/* ---------- move ---------- */
-const yt=q=>'https://www.youtube.com/results?search_query='+encodeURIComponent(q+' how to form beginner');
-function vMove(k){const d=peek(k),hd=dow(k),[nm,l]=EX[hd],pg=prog(k);
- let h='<div class="card"><div class="row"><h2 style="margin:0">'+DF[hd]+': '+nm+'</h2><span class="pill">Week '+pg.w+' of 4, round '+pg.c+'</span></div><p class="note">'+['Week 1: learn the movement, lighter sets.','Week 2: full sets, good form.','Week 3: add 2 reps or a heavier dumbbell.','Week 4: hold the load, slow and controlled.'][pg.w-1]+' Leave 1–3 reps in reserve and rest 60–120 s between hard sets. After round '+pg.c+', try heavier dumbbells if all reps felt easy.</p>';
- if(l.length){h+='<div class="tw"><table><tr><th>Done</th><th>Exercise</th><th>Target</th><th>Weight kg</th><th>Reps done</th><th>Difficulty 1–5</th></tr>';
-  l.forEach(e=>{const x=d.ex[e[0]]||{},n=esc(e[0]);h+='<tr><td><input type="checkbox" data-x="'+n+'|d"'+(x.d?' checked':'')+' aria-label="Done"></td><td><b>'+n+'</b><div class="note">'+esc(CUE[e[0]]||'')+' <a href="'+yt(e[0])+'" target="_blank" rel="noopener">Watch a demo</a></div></td><td>'+tgt(e,pg.w)+'</td><td><input type="number" step="0.5" min="0" data-x="'+n+'|kg" value="'+esc(x.kg??'')+'"></td><td><input type="number" min="0" data-x="'+n+'|r" value="'+esc(x.r??'')+'"></td><td><select data-x="'+n+'|df">'+['',1,2,3,4,5].map(v=>'<option value="'+v+'"'+(String(x.df??'')===String(v)?' selected':'')+'>'+(v===''?'–':v)+'</option>').join('')+'</select></td></tr>'});
-  h+='</table></div><p class="note">Bodyweight moves can stay at 0 kg. Your 3 kg dumbbells are enough to start; track reps first, then weight.</p>'}
- else h+='<div class="g">'+sel(k,'Activity','act',hd==5?['','Skating','Badminton','Zumba','Dance','Light run','Light cardio']:['','Gentle yoga','Walking','Stretching','Easy skating'])+inp(k,'Minutes','sp','number','min="0"')+inp(k,'Steps (optional)','steps','number','min="0"')+inp(k,'Notes','an')+'</div>'+(hd==5?'<p class="note">Keep hard sports away from your leg days. Running is optional for your goals.</p>':'<p class="note">Recovery is part of the plan. Rest, walk, stretch, prep your meals.</p>');
- h+='</div><div class="g2"><div class="card"><h2>Morning yoga (10–15 min)</h2><ol><li>Deep breathing, 1 min</li><li>Cat-cow, 10 slow rounds</li><li>Child’s pose, 30 s</li><li>Cobra, low lift, 20 s</li><li>Butterfly stretch, 45 s</li><li>Hip circles and gentle hamstring stretch</li><li>Gentle spinal twists</li><li>Relaxation, 2 min</li></ol><p class="note">Never force a stretch. Mild pull is enough.</p></div>'+
- '<div class="card"><h2>Meditation (5–10 min)</h2><ol><li>Sit tall, breathe in 4, out 6</li><li>Scan your body from head to toes</li><li>Name three things you are grateful for</li><li>Set one clear intention for the day</li></ol><div class="row" style="margin-top:8px"><button class="btn" data-a="timer" data-v="5">5 min</button><button class="btn" data-a="timer" data-v="10">10 min</button><button class="btn" data-a="timer" data-v="15">15 min</button><button class="btn b" data-a="timer" data-v="0">Stop</button></div><p><b id="tmr" style="font-size:24px;font-variant-numeric:tabular-nums">–:––</b></p></div></div>';
- h+='<div class="card"><h2>Posture practice (5–8 min)</h2><div class="g">'+POST.map((n,i)=>ckb(k,n,'po.'+i)).join('')+'</div><div class="g" style="margin-top:8px">'+inp(k,'Office posture breaks today','pb','number','min="0"')+'</div>'+
- '<details><summary>Office ergonomics checklist</summary><ul><li>Screen top at eye level, laptop on a stand with a separate keyboard if you can</li><li>Both feet supported, hips and knees about 90°</li><li>Elbows close, wrists neutral</li><li>Stand up for 2 minutes every 30–60 minutes</li><li>Relaxed shoulders, not forced back</li></ul></details>'+
- '<details><summary>Standing, sitting, walking, laptop</summary><ul><li>Standing: weight even on both feet, ribs over hips, head floating over shoulders</li><li>Sitting: hips back in the chair, long spine, chin slightly tucked</li><li>Walking: look ahead, swing arms, tall chest</li><li>Laptop: raise the screen, avoid bending your neck down for long</li></ul></details><p class="note">Posture exercises build strength and awareness. They do not change your skeleton. See a physiotherapist if you have persistent pain or numbness.</p></div>';
+/* ---------- Food ---------- */
+function vFood(k){const hd=dow(k),d=peek(k),veg=VEG[hd],mn=MENU[hd],W=S.meta.cfg.water||8;
+ let h='<div class="card"><div class="row sp"><h2 style="margin:0">What I ate</h2><span class="pill'+(veg?'':' nv')+'">'+(veg?'Vegetarian':'Non-veg')+' day guide</span></div><p class="note">Write what you really had, from home or the office. It saves for this date. The guide in each box is only a suggestion.</p>';
+ SLOTS.forEach(([s,n,t])=>{const sk=d.fs[s]===2;h+='<div class="fr"><div class="row sp"><b>'+n+' <small class="note">'+t+'</small></b><button class="btn s'+(sk?' b':'')+'" data-a="fsk" data-v="'+s+'" aria-pressed="'+sk+'">'+(sk?'Skipped':'Skip')+'</button></div><textarea data-d="meal.'+s+'" aria-label="'+n+'" placeholder="Guide: '+esc(mn[s])+'"'+(sk?' disabled':'')+'>'+esc(d.meal[s]||'')+'</textarea></div>'});
+ h+='</div><div class="card"><h3>Water (optional)</h3><div class="drops">';
+ for(let i=1;i<=W;i++)h+='<button data-a="w" data-v="'+i+'" aria-label="Glass '+i+'">'+drop(i<=(d.w||0))+'</button>';
+ h+='</div></div><div class="card">'+det('fg','<b>Weekly food guide</b>',rotTable()+'<p class="note">Vegetarian days lean on paneer, soy, milk, curd, dal and chickpeas. Eggs, chicken and fish stay on Wed, Fri, Sat and Sun.</p>')+det('fh','<b>Foods that support hair</b>','<ul><li>Protein: eggs, paneer, dal, curd, chicken</li><li>Iron: spinach, lentils, beans (with vitamin C)</li><li>Vitamin C: amla, guava, citrus</li><li>Zinc and omega-3: seeds, nuts, fish</li></ul><p class="note">Do not start iron or biotin supplements without a blood test and a doctor’s advice.</p>')+'</div>';
  return h}
-/* ---------- glow ---------- */
-const wkOf=k=>{const w=wkS(k);return S.meta.wk[w]||(S.meta.wk[w]={})};
-function vGlow(k){const hd=dow(k),d=peek(k),w=S.meta.wk[wkS(k)]||{};
- let h='<div class="g2"><div class="card"><h2>Morning skincare</h2><p class="note">After your workout and bath, about 7:00 AM</p>'+SKA.map((n,i)=>ckb(k,n+(i==2?' (SPF 30–50, reapply outdoors)':''),'sk.a'+i)).join('')+'</div><div class="card"><h2>Night skincare</h2><p class="note">About 9:30 PM</p>'+SKP.map((n,i)=>ckb(k,n+(i==0?' (removes sunscreen)':''),'sk.p'+i)).join('')+'</div></div>'+
- '<div class="card"><h2>Mask today</h2><p>'+(MASK[hd]?esc(MASK[hd]):'No mask scheduled. Moisturiser and sunscreen do more than extra products.')+'</p><p class="note">Patch-test on your inner arm first. No lemon, baking soda, toothpaste, harsh scrubs or undiluted essential oils. Homemade masks hydrate and soothe, they do not permanently change skin tone.</p>'+ckb(k,'Mask done today','sk.mask')+
- '<h3>Skin check (0 none, 3 strong)</h3><div class="g">'+['Irritation|irr','Dryness|dry','Breakouts|bro','Sensitivity|sen'].map(x=>{const[a,b]=x.split('|');return sel(k,a,'sc.'+b,['',0,1,2,3])}).join('')+'</div></div>'+
- '<div class="card"><h2>Haircare</h2><p>'+(HAIRDAY[hd]?'Scheduled: '+esc(HAIRDAY[hd]):'No haircare scheduled today. Gentle detangling is enough.')+'</p><div class="g">'+[['Wash day','wash'],['Shampoo','sh'],['Conditioner','co'],['Hair mask','mk'],['Oil on lengths','oil']].map(x=>ckb(k,x[0],'hw.'+x[1])).join('')+'</div><div class="g" style="margin-top:8px">'+sel(k,'Scalp','scalp',['','Comfortable','Dry or flaky','Oily','Itchy'])+sel(k,'Shedding','shed',['','Less than usual','About usual','More than usual'])+sel(k,'Breakage','brk',['','None','Some','A lot'])+'</div><h3 style="margin-top:10px">Hair-supporting foods today</h3><div class="g">'+['Protein (egg, paneer, dal, chicken)','Iron (spinach, lentils, beans)','Vitamin C (amla, guava, citrus)','Seeds, nuts or fish (zinc, omega-3)'].map((n,i)=>ckb(k,n,'hf.'+i)).join('')+'</div>'+
- '<p class="note">Wash 2–3 times a week with a gentle shampoo, always condition the lengths, use a wide-tooth comb, a heat protectant if you style with heat, trim split ends when needed. Oiling and masks condition the hair, they do not grow new hair. Persistent shedding deserves a doctor or dermatologist check before any supplement.</p></div>'+
- '<div class="card"><h2>Weekly reset</h2><div class="g">'+[['Face mask','mask'],['Skin-condition review','review'],['Pillowcase changed','pillow'],['Personal grooming','groom']].map(x=>'<label class="ck"><input type="checkbox" data-w="'+x[1]+'"'+(w[x[1]]?' checked':'')+'>'+x[0]+'</label>').join('')+'</div></div>'+
- '<div class="card"><h2>Face and expression (5–7 min)</h2><div class="g">'+FACE.map((n,i)=>ckb(k,n,'fc.'+i)).join('')+'</div><p class="note">This trains expression, clear speech and relaxation for acting. It cannot change facial bones, jaw structure or teeth position. For your upper and lower teeth alignment, book one consultation with an orthodontist, even if you are not ready for braces. Do not push your jaw back or clench your teeth.</p></div>';
+/* ---------- Move ---------- */
+function vMove(k){const hd=dow(k),d=peek(k),[nm,l]=EX[hd],pg=prog(k),L=items(k);
+ const yt=q=>'https://www.youtube.com/results?search_query='+encodeURIComponent(q+' exercise proper form beginner');
+ const ids=l.map(e=>'x:'+e[0]);
+ let h='<div class="card"><div class="row sp"><h2 style="margin:0">'+DF[hd]+': '+nm+'</h2><span class="pill">Week '+pg.w+' of 4</span></div><p class="note">'+['Week 1: learn the movement, lighter sets.','Week 2: full sets, good form.','Week 3: add about 2 reps or a heavier dumbbell.','Week 4: hold the load, slow and controlled.'][pg.w-1]+' Rest 60–120 s between hard sets.</p>';
+ if(l.length){h+='<div class="row sp" style="margin:6px 0"><span class="note">Tap a name for instructions</span><button class="btn s" data-a="allx" data-ids="'+esc(ids.join('|'))+'">Mark all done</button></div>';
+  l.forEach(e=>{const body='<p>'+esc(CUE[e[0]]||'')+'</p><p class="note">Easier: bodyweight or a lighter dumbbell. Harder: add 2 reps, then a heavier dumbbell. <a href="'+yt(e[0])+'" target="_blank" rel="noopener">Watch a demo</a></p>';
+   h+=trow(k,'x:'+e[0],esc(e[0]),tgt(e,pg.w),body)})}
+ else{const id=hd==5?'sport':'rec';
+  h+=trow(k,id,hd==5?'Sport, skating or dance':'Gentle yoga and a walk',hd==5?'Alternate skating, badminton, zumba or dance. Keep hard sports away from leg days.':'Recovery is part of the plan. Rest, walk, stretch, prep meals.','')}
+ h+='</div><div class="card"><h3>Add an activity I did</h3><div class="chips">'+ACTS.map(a=>'<button class="chip" data-a="act" data-v="'+a+'">+ '+a+'</button>').join('')+'</div><div class="row" style="margin-top:8px"><input id="ac_t" placeholder="Something else" style="flex:1;min-width:140px" aria-label="Other activity"><button class="btn" data-a="act" data-v="">Add</button></div>';
+ L.filter(it=>it.cu&&it.c==='move').forEach(it=>h+=crow(k,it));
+ h+='</div><div class="card"><h3>Daily routines</h3>'+
+ trow(k,'mr','Morning yoga and mobility','10–15 min','<ol><li>Deep breathing, 1 min</li><li>Cat-cow, 10 slow rounds</li><li>Child’s pose, 30 s</li><li>Cobra, low lift, 20 s</li><li>Butterfly stretch, 45 s</li><li>Hip circles and a gentle hamstring stretch</li><li>Gentle spinal twists, then relax 2 min</li></ol><p class="note">Never force a stretch. A mild pull is enough.</p><h3>Meditation</h3><p class="note">Breathe in 4, out 6. Scan your body, name three things you are grateful for, set one intention.</p><div class="row"><button class="btn" data-a="timer" data-v="5">5 min</button><button class="btn" data-a="timer" data-v="10">10 min</button><button class="btn b" data-a="timer" data-v="0">Stop</button></div><p><b id="tmr" style="font-size:24px">–:––</b></p>')+
+ trow(k,'pos','Posture routine','5–8 min','<ul>'+POST.map(p=>'<li>'+p+'</li>').join('')+'</ul><p class="note">Office: screen at eye level, feet supported, stand for 2 minutes every 30–60 minutes. Keep shoulders relaxed, not forced back. Posture work builds strength and awareness, it does not change your skeleton. See a physiotherapist for persistent pain or numbness.</p>')+'</div>';
  return h}
-/* ---------- cycle ---------- */
-function cyFlags(){const st=S.meta.cycle.map(c=>c.s).filter(Boolean).sort(),g=[];for(let i=1;i<st.length;i++)g.push(Math.round((pd(st[i])-pd(st[i-1]))/864e5));
- const f=[];if(g.some(x=>x<21||x>35))f.push('At least one logged gap was shorter than 21 or longer than 35 days.');
- if(g.length>=3&&Math.max(...g)-Math.min(...g)>9)f.push('Your cycle length varies by more than 9 days.');
- const ls=st[st.length-1];if(ls){const n=Math.round((pd(todayK)-pd(ls))/864e5);if(n>45)f.push('It has been '+n+' days since your last logged period start.')}
- return{g,f}}
-function vCycle(k){const d=peek(k),{g,f}=cyFlags(),cy=S.meta.cycle.slice().sort((a,b)=>(a.s||'')<(b.s||'')?1:-1);
- let h='<div class="card"><h2>Cycle for '+fmt(k)+'</h2><div class="row"><button class="btn p" data-a="ps">Period started today</button><button class="btn" data-a="pe">Period ended today</button></div><div class="g" style="margin-top:10px">'+sel(k,'Flow','flow',['','None','Light','Medium','Heavy'])+sel(k,'Cramps','cr',['',0,1,2,3])+inp(k,'Energy (1–10)','en','number','min="1" max="10"')+inp(k,'Mood and symptoms','sym')+'</div><p class="note">Your cycle is irregular, so this only records what actually happens. It does not predict ovulation or diagnose anything.</p></div>';
- h+='<div class="card"><h3>Your logged periods</h3>'+(cy.length?'<div class="tw"><table><tr><th>Start</th><th>End</th><th>Gap before next start</th><th></th></tr>'+cy.map((c,i)=>{const older=cy[i+1];const gap=older?Math.round((pd(c.s)-pd(older.s))/864e5):'';return '<tr><td>'+esc(c.s)+'</td><td>'+esc(c.e||'')+'</td><td>'+(gap?gap+' days since previous start':'')+'</td><td><button class="btn s b" data-a="delc" data-v="'+esc(c.s)+'" aria-label="Remove">✕</button></td></tr>'}).join('')+'</table></div>':'<p class="note">No periods logged yet.</p>')+
- (g.length?'<p>Average gap: <b>'+Math.round(avg(g))+' days</b> over '+g.length+' cycle'+(g.length>1?'s':'')+'.</p>':'')+'</div>';
- h+='<div class="card '+(f.length?'':'soft')+'"><h3>When to talk to a doctor</h3>'+(f.length?'<ul>'+f.map(x=>'<li>'+x+'</li>').join('')+'</ul><p>Worth mentioning to a doctor or gynaecologist. Take this log with you.</p>':'<p class="note">Nothing in your log stands out yet.</p>')+'<p class="note">Because your periods are irregular, a check-up is sensible whatever the log says. Also seek care for periods missing for 3 months, very heavy bleeding, severe pain, or sudden changes. Low body weight, under-eating and over-exercise can affect cycles, so no crash diets or extreme training.</p></div>';
- h+='<div class="card"><h3>Gentle training on hard days</h3><p>Cramps or low energy: swap the workout for walking, cat-cow, child’s pose and butterfly stretch. Keep protein and water up. Light movement is fine, rest is also fine.</p></div>';
- h+='<div class="card"><h3>Medical and dental appointments</h3>'+(S.meta.appts.length?'<ul>'+S.meta.appts.map((a,i)=>'<li>'+esc(a.d)+': '+esc(a.n)+' <button class="btn s b" data-a="dela" data-v="'+i+'" aria-label="Remove">✕</button></li>').join('')+'</ul>':'<p class="note">Suggested: gynaecologist or GP for your cycle and hair fall, an orthodontist for your teeth.</p>')+
- '<div class="row"><input id="ap_d" type="date" style="width:auto"><input id="ap_n" placeholder="e.g. Orthodontist consult" style="flex:1;min-width:160px"><button class="btn" data-a="adda">Add</button></div></div>';
- return h}
-/* ---------- progress ---------- */
-let cur=todayK,tab='today',pgEx='',armed='';
-const lastN=(n,fn)=>{const o=[];for(let i=n-1;i>=0;i--){const k=add(cur,-i);o.push({l:sh(k),v:fn(k)})}return o};
-const body=()=>S.meta.body.slice().sort((a,b)=>a.d<b.d?-1:1);
-function vProg(k){const c=S.meta.cfg,bd=body(),logged=new Set();
- Object.values(S.days).forEach(x=>Object.keys(x.ex||{}).forEach(n=>logged.add(n)));
- const names=[...logged].sort();if(!pgEx||!logged.has(pgEx))pgEx=names[0]||'';
- const ov=pgEx?Object.keys(S.days).sort().map(dd=>{const x=(S.days[dd].ex||{})[pgEx];return x&&(num(x.kg)||num(x.r))?{l:sh(dd),kg:num(x.kg),r:num(x.r)}:null}).filter(Boolean):[];
- const useKg=ov.some(o=>o.kg>0);
- const lg=f=>{const e=bd.filter(x=>x[f]!==''&&x[f]!=null);return e.length?e[e.length-1][f]:null},fs=f=>f==='w'?44:f==='waist'?26:(bd.find(x=>x[f]!==''&&x[f]!=null)||{})[f]??null;
- const rows=[['Weight (kg)','w'],['Waist (in)','waist'],['Hips (in)','hips'],['Thigh (in)','thigh'],['Plank (s)','plank']].map(([n,f])=>{const s=fs(f),l=lg(f);return '<tr><td>'+n+'</td><td>'+(s??'to measure')+'</td><td>'+(l??'')+'</td><td>'+(s!=null&&l!=null?r1(l-s):'')+'</td></tr>'}).join('');
- let h='<div class="card"><h2>Consistency, last 30 days</h2><div class="ch">'+bars(lastN(30,habPct),{t:'Habit completion percent'})+'</div></div><div class="g2"><div class="card"><h3>Protein, last 14 days (g)</h3><div class="ch">'+line(lastN(14,x=>peek(x).m.length||num(peek(x).gp)?tot(x).p:null),{band:[c.pmin,c.pmax],min:0,t:'Protein per day'})+'</div><p class="note">Shaded band is your '+c.pmin+'–'+c.pmax+' g target.</p></div><div class="card"><h3>Sleep, last 14 days (h)</h3><div class="ch">'+line(lastN(14,x=>num(peek(x).sleep)||null),{band:[7,9],t:'Sleep hours'})+'</div></div>'+
- '<div class="card"><h3>Energy, last 14 days</h3><div class="ch">'+line(lastN(14,x=>num(peek(x).en)||null),{min:0,max:10,t:'Energy'})+'</div></div><div class="card"><h3>Weight trend (kg)</h3><div class="ch">'+line(bd.filter(x=>x.w!==''&&x.w!=null).map(x=>({l:sh(x.d),v:num(x.w)})),{t:'Weight'})+'</div><p class="note">Slow, steady gain is the aim. A lower number is not a win.</p></div></div>'+
- '<div class="card"><h3>Strength progress</h3>'+(names.length?'<label class="f" style="max-width:320px">Exercise<select data-pg="1">'+names.map(n=>'<option'+(n===pgEx?' selected':'')+'>'+esc(n)+'</option>').join('')+'</select></label><div class="ch">'+line(ov.map(o=>({l:o.l,v:useKg?o.kg:o.r})),{t:'Progress'})+'</div><p class="note">Showing '+(useKg?'weight in kg':'reps')+' per session.</p>':'<p class="note">Log weights and reps in Move to see progressive overload here.</p>')+'</div>'+
- '<div class="card"><h2>Body measurements</h2><p class="note">Optional, monthly is plenty. A smaller waist or lower weight is not automatic success.</p><div class="tw"><table><tr><th>Measurement</th><th>Starting</th><th>Current</th><th>Difference</th></tr>'+rows+'</table></div>'+
- '<h3 style="margin-top:14px">Add a check-in</h3><div class="g"><label class="f">Date<input id="b_d" type="date" value="'+k+'"></label>'+[['Weight kg','w'],['Waist in','waist'],['Hips in','hips'],['Thigh in','thigh'],['Plank seconds','plank'],['Clothing comfort 1–5','cl'],['Confidence 1–5','cf']].map(x=>'<label class="f">'+x[0]+'<input id="b_'+x[1]+'" type="number" step="0.1"></label>').join('')+'<label class="f">Glute strength note<input id="b_gl" placeholder="e.g. hip thrust 3 kg x 15"></label></div><p><button class="btn p" data-a="addb">Save check-in</button></p>'+
- (bd.length?'<div class="tw"><table><tr><th>Date</th><th>Weight</th><th>Waist</th><th>Hips</th><th>Thigh</th><th>Plank</th><th>Glute note</th><th></th></tr>'+bd.slice().reverse().map(x=>'<tr><td>'+esc(x.d)+'</td><td>'+esc(x.w)+'</td><td>'+esc(x.waist)+'</td><td>'+esc(x.hips)+'</td><td>'+esc(x.thigh)+'</td><td>'+esc(x.plank)+'</td><td>'+esc(x.gl||'')+'</td><td><button class="btn s b" data-a="delb" data-v="'+esc(x.d)+'" aria-label="Remove">✕</button></td></tr>').join('')+'</table></div>':'')+'</div>';
- return h}
-/* ---------- review ---------- */
-function wkStats(ws){const days=[0,1,2,3,4,5,6].map(i=>add(ws,i)),pr=days.filter(x=>peek(x).m.length||num(peek(x).gc)),c=S.meta.cfg;
- const good=pr.filter(x=>tot(x).p>=c.pmin&&new Set(peek(x).m.map(m=>m.s)).size>=4).length,sl=days.map(x=>num(peek(x).sleep)).filter(x=>x>0),hd=days.filter(x=>HAIRDAY[dow(x)]);
- return{wo:days.filter(x=>exRatio(x)>=.5).length,nut:pr.length?good+' of '+pr.length+' logged days balanced':'No food logged',pro:pr.length?Math.round(avg(pr.map(x=>tot(x).p)))+' g':'–',pl:pr.length?avg(pr.map(x=>tot(x).p)):0,sl:sl.length?r1(avg(sl))+' h average, '+sl.filter(x=>x>=7&&x<=9).length+' nights in 7–9 h':'–',slo:sl.length,po:days.filter(x=>cnt(peek(x).po)>=3).length,sk:Math.round(avg(days.map(x=>cnt(peek(x).sk)/7))*100),hair:hd.filter(x=>peek(x).h['2_3']==1).length+' of '+hd.length,cr:days.filter(x=>creat(x)>0).length,crm:days.reduce((a,x)=>a+creat(x),0),hab:Math.round(avg(days.filter(anyHab).map(habPct)))}}
-function vRev(k){const ws=wkS(k),st=wkStats(ws),r=S.meta.rev[ws]||{},c=S.meta.cfg,mo=k.slice(0,7),mr=S.meta.rev['m-'+mo]||{};
- const rv=(l,f,o,ty)=>{const v=(ty==='m'?mr:r)[f]??'';return '<label class="f">'+l+(o?'<select data-rv="'+(ty==='m'?'m-'+mo:ws)+'|'+f+'">'+o.map(x=>'<option'+(x===v?' selected':'')+' value="'+esc(x)+'">'+(x||'–')+'</option>').join('')+'</select>':'<textarea data-rv="'+(ty==='m'?'m-'+mo:ws)+'|'+f+'">'+esc(v)+'</textarea>')+'</label>'};
- const pri=[];if(st.pl&&st.pl<c.pmin)pri.push('Reach '+c.pmin+' g protein on more days');if(st.wo<4)pri.push('Complete at least 4 sessions');if(st.po<4)pri.push('Do your posture routine 4 days');if(st.slo&&!/[4-7] nights in/.test(st.sl))pri.push('Protect a steady bedtime');if(st.cr<3)pri.push('Edit for 20 minutes on 3 days');pri.push('Keep what is working');
- const bd=body().filter(x=>x.d.startsWith(mo)&&x.w!==''&&x.w!=null),ds=Object.keys(S.days).filter(x=>x.startsWith(mo)),ms=Object.keys(S.days).filter(x=>x.startsWith(mo)).sort();
- const mh=Math.round(avg(ds.filter(anyHab).map(habPct))),mp=ds.filter(x=>peek(x).m.length);
- let h='<div class="card"><div class="row"><button class="btn s" data-a="wkn" data-v="-1">‹ Previous week</button><h2 style="margin:0">Week of '+sh(ws)+' to '+sh(add(ws,6))+'</h2><button class="btn s" data-a="wkn" data-v="1">Next week ›</button></div><div class="tiles">'+
- tile('Habits done',st.hab+'%',st.hab)+tile('Sessions completed',st.wo+' of 7')+tile('Nutrition',st.nut)+tile('Average protein',st.pro)+tile('Sleep',st.sl)+tile('Posture days',st.po+' of 7')+tile('Skincare',st.sk+'%',st.sk)+tile('Haircare days',st.hair)+tile('Creative',st.cr+' days, '+st.crm+' min')+'</div></div>'+
- '<div class="card soft"><h3>Three priorities for next week</h3><ol>'+pri.slice(0,3).map(x=>'<li>'+x+'</li>').join('')+'</ol><div class="g">'+rv('Best achievement','best')+rv('Main difficulty','diff')+rv('What to improve','imp')+rv('My own priorities','pri')+'</div></div>'+
- '<div class="card"><h3>Posture reflection</h3><div class="g">'+rv('Is my neck less forward?','p1',['','Yes','A little','Not yet'])+rv('Noticing less slouching?','p2',['','Yes','A little','Not yet'])+rv('Can I keep a comfortable neutral posture?','p3',['','Yes','Sometimes','Not yet'])+rv('Any pain?','p4',['','None','Mild','Needs a check'])+'</div><p class="note">Better awareness is the win. Posture work does not change your skeleton.</p></div>'+
- '<div class="card"><h3>Hair and skin reflection</h3><div class="g">'+rv('Shedding this week','h1',['','Less','About the same','More'])+rv('Skin this week','h2',['','Calm','Dry','Irritated','Breakouts'])+rv('Notes','h3')+'</div><p class="note">One calm week does not guarantee regrowth. Look at trends over months and see a doctor if shedding persists.</p></div>'+
- '<div class="card"><h2>'+MN[+mo.slice(5)-1]+' '+mo.slice(0,4)+' review</h2><div class="tiles">'+tile('Habit completion',(mh||0)+'%',mh)+tile('Days logged',ds.length)+tile('Sessions completed',ds.filter(x=>exRatio(x)>=.5).length)+tile('Average protein',mp.length?Math.round(avg(mp.map(x=>tot(x).p)))+' g':'–')+
- tile('Weight in month',bd.length>1?bd[0].w+' to '+bd[bd.length-1].w+' kg':bd.length?bd[0].w+' kg':'–')+tile('Higher shedding days',ds.filter(x=>peek(x).shed==='More than usual').length)+tile('Breakout days',ds.filter(x=>num(gv(peek(x),'sc.bro'))>=2).length)+tile('Period starts',S.meta.cycle.filter(x=>x.s&&x.s.startsWith(mo)).length)+tile('Creative minutes',ms.reduce((a,x)=>a+creat(x),0))+'</div>'+
- '<div class="g" style="margin-top:12px">'+rv('Best personal achievement','best','','m')+rv('Lessons learned','less','','m')+rv('Next month’s objectives','next','','m')+'</div><p class="note">Compare trends across months, not single days.</p></div>';
- return h}
-/* ---------- plan ---------- */
-function vPlan(k){const c=S.meta.cfg;
- const tt=[['5:50','Wake up, water, wash face'],['6:00','Workout (30–40 min), or yoga and mobility'],['6:40','Cool down, breathing, posture'],['7:00','Bath, skincare, sunscreen'],['7:30','Breakfast (protein first)'],['8:00','Get ready and commute, carry lunch, snack, water'],['9:00–19:00','Office: snack 11:00, lunch 13:30, posture break every 30–60 min'],['17:00','Evening snack (or have one outside after office)'],['20:00','Dinner'],['20:30','Editing, acting, reading or learning'],['21:30','Night skincare, prep clothes and meals'],['22:00','Sleep (7–9 h)']];
- let h='<div class="card"><h2>My plan</h2><p class="note">Moving the routine later is better than cutting sleep.</p>'+
- '<details open><summary>Weekday timetable</summary><div class="tw"><table>'+tt.map(x=>'<tr><td><b>'+x[0]+'</b></td><td>'+x[1]+'</td></tr>').join('')+'</table></div></details>'+
- '<details><summary>Food rotation</summary><div class="tw"><table><tr><th>Day</th><th>Type</th><th>Breakfast</th><th>Lunch</th><th>Evening snack</th><th>Dinner</th></tr>'+DF.map((n,i)=>'<tr><td>'+n+'</td><td><span class="pill'+(VEG[i]?'':' nv')+'">'+(VEG[i]?'Veg':'Non-veg')+'</span></td><td>'+MENU[i].bf+'</td><td>'+MENU[i].ln+'</td><td>'+MENU[i].es+'</td><td>'+MENU[i].dn+'</td></tr>').join('')+'</table></div><p class="note">Vegetarian days lean on paneer, soy, milk, curd, dal and chickpeas. Eggs, chicken and fish stay on Wed, Fri, Sat, Sun.</p></details>'+
- '<details><summary>Mass gainer guide</summary><ul><li>Optional. Food comes first.</li><li>Read the serving size, calories and protein on your tub, then start with a quarter serving after training or with breakfast.</li><li>Mix with milk or water as the label says. Cut back if it makes you too full to eat meals.</li><li>Daily total = all meals + snacks + gainer. Add up kcal and protein in Food.</li><li>Food swaps: banana peanut butter smoothie, mango milkshake, milk with dates and nuts.</li><li>Check with a doctor first if you have kidney, blood sugar or other health conditions.</li></ul></details>'+
- '<details><summary>Weekend schedule</summary><p><b>Saturday</b>: 7–8 skating or badminton (alternate), 11–12 zumba or dance, 2–3 acting and expressions, 8–9 one small edit.<br><b>Sunday</b>: morning yoga and a walk, afternoon meal prep, groceries and laundry, evening reading, journaling and planning.</p></details>'+
- '<details><summary>Weekly grocery list</summary><p>Eggs, chicken, fish, paneer, milk, curd, Greek yogurt, soy chunks, dal (toor, moong), rajma, chana, rice, atta, oats, poha, idli and dosa batter, bread, peanut butter, bananas, mango or seasonal fruit, apples, guava, oranges, amla, dates, almonds, walnuts, flax, chia and pumpkin seeds, spinach, seasonal vegetables, aloe vera gel, coconut oil.</p></details>'+
- '<details><summary>Sunday prep checklist</summary><ul><li>Soak rajma or chana, boil eggs</li><li>Cook dal and a base gravy</li><li>Wash and chop vegetables</li><li>Make the seed mix, portion nuts and dates</li><li>Marinate chicken, freeze portions</li><li>Plan the week’s lunches and snacks</li></ul></details>'+
- '<details><summary>Body, honestly</summary><p>At 155 cm and 44 kg your BMI is about 18.3, just under the usual healthy range of 18.5. The aim is gradual muscle gain, strength and posture, not weight loss. Exercise cannot remove fat from one spot, choose where weight is gained, change facial bones or teeth, or change breast size. Hair fall and irregular periods deserve a medical check-up before any supplement.</p></details></div>'+
- '<div class="card"><h3>Settings</h3><div class="g"><label class="f">Water goal (glasses)<input type="number" data-c="water" value="'+c.water+'"></label><label class="f">Protein minimum (g)<input type="number" data-c="pmin" value="'+c.pmin+'"></label><label class="f">Protein maximum (g)<input type="number" data-c="pmax" value="'+c.pmax+'"></label><label class="f">Maintenance calories (optional)<input type="number" data-c="kcal" value="'+(c.kcal||'')+'"></label><label class="f">Programme start date<input type="date" data-c="start" value="'+esc(c.start)+'"></label></div></div>'+
- '<div class="card"><h3>Back up or restore</h3><p class="note">Copy this text somewhere safe, or paste a saved copy and press Restore.</p><textarea id="io" style="min-height:90px"></textarea><div class="row" style="margin-top:8px"><button class="btn" data-a="exp">Show my data</button><button class="btn b" data-a="imp">Restore from text</button></div></div>'+
- '<div class="card"><h3>Your data on this phone</h3><p class="note">Everything you log is stored only inside this app on your phone. Nothing is sent anywhere. It is tiny (a few KB a month). Download a spreadsheet to open in Excel or Google Sheets, or delete what you no longer want. Deleting cannot be undone, so download a backup first if unsure.</p><div class="row"><button class="btn" data-a="csv">Download spreadsheet (CSV)</button><button class="btn" data-a="bak">Download backup file</button></div><div class="row" style="margin-top:10px">'+dlb('deld','Delete this day’s entries','Tap again to delete this day')+dlb('delold','Delete entries older than 90 days','Tap again to confirm')+dlb('delall','Delete everything','Tap again to delete ALL data')+'</div></div>';
+/* ---------- Glow ---------- */
+function vGlow(k){const hd=dow(k),d=peek(k),hc=d.hc,reg=HAIRREG.includes(hd);
+ let h='<div class="card"><h2>Skincare</h2>'+
+ trow(k,'am','Morning','Cleanser, moisturiser, sunscreen, lip care','<ol><li>Gentle cleanser</li><li>Moisturiser</li><li>Sunscreen SPF 30–50 (reapply if outdoors)</li><li>Lip balm</li></ol>')+
+ trow(k,'pm','Night','Cleanser, moisturiser, lip care','<ol><li>Cleanse to remove sunscreen</li><li>Moisturiser</li><li>Lip balm</li></ol>');
+ if(MASKD[hd])h+=trow(k,'mask','Face mask (optional)',esc(MASKD[hd]),'<p>Patch-test on your inner arm first. Leave on 5–10 minutes, rinse, moisturise.</p><p class="note">Masks hydrate and soothe. They do not permanently change skin tone. Never use lemon, baking soda, toothpaste, harsh scrubs or undiluted essential oils.</p>');
+ h+='</div><div class="card"><h2>Haircare</h2>';
+ if(reg||(hc&&hc.on===1)){h+='<div class="tr"><span class="tt"><b>Haircare today?</b><br><small class="note">'+(reg?'Saturday and Sunday are your regular days.':'Extra haircare, your regular schedule is unchanged.')+'</small></span><div class="seg"><button data-a="hy" data-v="1" class="'+(hc&&hc.on===1?'on':'')+'">Yes</button><button data-a="hn" data-v="2" class="'+(hc&&hc.on===0?'on':'')+'">No</button></div></div>';
+  if(hc&&hc.on===0)h+='<p class="note">No problem. A skipped haircare day is never counted as incomplete.</p>'}
+ else h+='<p class="note">Not a regular haircare day.</p><button class="btn" data-a="hy" data-v="1">I did haircare today</button>';
+ if(hc&&hc.on===1){h+='<p class="note" style="margin:10px 0 4px">What did you do?</p><div class="chips">'+HAIRDO.map(([i,n])=>'<button class="chip'+(hc.did&&hc.did[i]?' on':'')+'" data-a="hd" data-v="'+i+'" aria-pressed="'+!!(hc.did&&hc.did[i])+'">'+n+'</button>').join('')+'</div>'+(reg?'':'<p><button class="btn s b" data-a="hx">Undo extra haircare</button></p>')}
+ h+='</div><div class="card"><h3>Optional notes</h3><div class="g"><label class="f">Skin<input data-d="skn" value="'+esc(d.skn||'')+'" placeholder="dryness, breakouts, irritation"></label><label class="f">Hair<input data-d="hrn" value="'+esc(d.hrn||'')+'" placeholder="shedding, scalp, breakage"></label></div></div><div class="card"><h3>Guidance</h3>'+
+ det('g1','Skin: what actually helps','<p>Gentle cleanser, moisturiser and sunscreen every day do more than a long product list. Drink water, sleep 7–9 hours. Stop any product that stings or itches.</p>')+
+ det('g2','Hair: schedule and care','<ul><li>Wash 2–3 times a week with a gentle shampoo, always condition the lengths</li><li>Wide-tooth comb, gentle detangling, no rough towel rubbing</li><li>Heat protectant if you style with heat, trim split ends when needed</li><li>Easy mask: 2 tbsp plain yogurt + 1 tsp coconut oil on lengths, 10–15 min, then wash</li></ul><p class="note">Oils and masks condition hair. They do not grow new hair. See a doctor or dermatologist if shedding persists.</p>')+
+ det('g3','Face and expression practice (5–7 min)','<ul>'+FACE.map(f=>'<li>'+f+'</li>').join('')+'</ul><p class="note">This trains expression, clear speech and relaxation for acting. It cannot change facial bones, jaw or teeth position. For your bite, see an orthodontist. Do not push your jaw back or clench.</p>'+seg('face',stOf(k,{id:'face'})))+'</div>';
  return h}
 
-function csvEsc(v){v=String(v==null?'':v);return /[",\n]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v}
-function mkCsv(){const H=['date','habit_pct','wake','sleep_h','energy','mood','feeling','water_glasses','fruit_veg','kcal','protein_g','carbs_g','fat_g','workout_pct','meditation_min','editing_min','acting_min','reading_min','skincare_steps','posture_items','flow','went_well','to_improve'];
- const rows=Object.keys(S.days).sort().map(k=>{const d=peek(k),t=tot(k);return [k,habPct(k),d.wake,d.sleep,d.en,d.mood,d.feel,d.w,d.fv,t.c,t.p,t.cb,t.f,Math.round(exRatio(k)*100),d.med,d.ed,d.ac,d.rd,cnt(d.sk),cnt(d.po),d.flow,gv(d,'n.well'),gv(d,'n.imp')]});
- return [H].concat(rows).map(r=>r.map(csvEsc).join(',')).join('\n')}
-function dl(name,text,type){try{const u=URL.createObjectURL(new Blob([text],{type}));const a=document.createElement('a');a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),3000)}catch(e){}}
-const dlb=(act,txt,armTxt)=>'<button class="btn b" data-a="'+act+'">'+(armed===act?armTxt:txt)+'</button>';
-/* ---------- app ---------- */
-const VIEWS={today:vToday,food:vFood,move:vMove,glow:vGlow,cycle:vCycle,prog:vProg,rev:vRev,plan:vPlan};
-function render(){$('#dl').textContent=fmt(cur);$('#nav').innerHTML=TABS.map(t=>'<button data-a="tab" data-v="'+t[0]+'"'+(t[0]===tab?' aria-current="true"':'')+'>'+t[1]+'</button>').join('');$('#main').innerHTML=VIEWS[tab](cur)}
-function upd(){const s=$('#sum');if(s)s.innerHTML=sumHtml(cur);const t=$('#tt');if(t){t.innerHTML=totHtml(cur);$('#ev').textContent=evalDay(cur)}}
-function setPath(o,p,v){const a=p.split('.');a.slice(0,-1).forEach(x=>o=o[x]||(o[x]={}));o[a[a.length-1]]=v}
-const findF=n=>FOODS.find(f=>f[0]===n);
+/* ---------- Cycle ---------- */
+let cyM=todayK.slice(0,7),selCy=todayK,calM=todayK.slice(0,7),selCal=todayK,pgR=7;
+const fld=(l,a,v,t)=>'<label class="f">'+l+'<input type="'+(t||'text')+'" '+a+' value="'+esc(v||'')+'"></label>';
+const opts=(a,v)=>a.map(x=>'<option'+(x===v?' selected':'')+'>'+esc(x)+'</option>').join('');
+function predHtml(P){
+ if(P.mode==='none')return '<p>Select the first day of your most recent period in the calendar and tap <b>Period started</b>. An estimate appears here.</p>';
+ let h='<p style="font-size:19px;margin:0 0 4px"><b>'+sh(P.mid)+'</b> <span class="note">likely start</span></p><p style="margin:0 0 8px">Range: <b>'+sh(P.lo)+' to '+sh(P.hi)+'</b></p>'+
+ '<div class="row"><span class="pill">Cycle length used: '+r1(P.mean)+' days</span><span class="pill">Period lasts about '+P.plen+' days'+(P.plenLogged?'':' (assumed)')+'</span><span class="pill">Confidence: '+esc(P.conf)+'</span></div>';
+ if(P.late>0)h+='<p class="note">It is '+P.late+' day'+(P.late>1?'s':'')+' past the estimated range. Cycles can run late. If it goes beyond 45 days since your last start, check with a doctor.</p>';
+ h+='<p class="note" style="margin-top:10px">'+(P.mode==='default'?'You have '+P.gaps.filter(g=>g.ok).length+' usable cycle length'+(P.gaps.filter(g=>g.ok).length===1?'':'s')+'. Until 3 are logged, the standard 28–30 day estimate is used (from your last start, '+sh(P.last)+'). After that it switches to your own average.':'Weighted average of your last '+P.used.length+' cycle lengths, recent cycles count more. Typical variation is about ±'+P.half+' days, so the range is '+(P.half*2+1)+' days wide.')+'</p>';
+ if(P.gaps.length)h+=det('cyd','<b>How this was calculated</b>','<div class="tw"><table><tr><th>From</th><th>To</th><th>Days</th><th>Used</th></tr>'+P.gaps.slice(-8).map(g=>'<tr><td>'+sh(g.from)+'</td><td>'+sh(g.to)+'</td><td>'+g.n+'</td><td>'+(!g.ok?'Ignored (outside 18–60 days)':P.used.includes(g)?'Yes':P.mode==='default'?'Not yet':'Outlier ignored')+'</td></tr>').join('')+'</table></div><p class="note">Start dates are your own logged dates. Nothing is filled in for you.</p>');
+ const odd=P.gaps.filter(g=>g.n<21||g.n>35).length;
+ h+='<p class="note" style="margin-top:10px">This is an estimate from your own log, not a guaranteed date or medical advice.'+(odd?' Some of your logged cycles are shorter than 21 or longer than 35 days, which is worth mentioning to a doctor.':'')+'</p>';
+ return h}
+function vCycle(){const P=predictCycle(),cy=S.meta.cycle,inside=cy.find(c=>selCy>=c.s&&(c.e?selCy<=c.e:selCy===c.s)),d=peek(selCy);
+ let h='<div class="card"><div class="row sp"><button class="btn s" data-a="cym" data-v="-1" aria-label="Previous month">‹</button><h2 style="margin:0">'+mLabel(cyM)+'</h2><button class="btn s" data-a="cym" data-v="1" aria-label="Next month">›</button></div>'+
+ grid(cyM,(k,inM)=>{const per=inPeriod(k),pr=!per&&P.lo&&k>=P.lo&&k<=P.hi;return '<button class="cd'+(inM?'':' out')+(per?(isStart(k)?' ps':' pdy'):'')+(pr?' pr':'')+(k===todayK?' td':'')+(k===selCy?' sel':'')+'" data-a="cysel" data-v="'+k+'" aria-label="'+fmt(k)+'"><span class="n">'+pd(k).getDate()+'</span></button>'})+
+ '<div class="legend"><span><i class="sw ps"></i>Period start</span><span><i class="sw pdy"></i>Period days</span><span><i class="sw pr"></i>Estimated window</span></div>'+
+ '<div class="selbox"><b>'+fmt(selCy)+'</b>'+(inside?' <span class="pill nv">inside a logged period</span>':'')+'<div class="row" style="margin-top:8px"><button class="btn p" data-a="ps">Period started</button><button class="btn" data-a="pe">Period ended</button></div></div>'+
+ det('cysym','<span class="note">Optional: flow, cramps, mood, notes for this date</span>','<div class="g" style="margin-top:8px"><label class="f">Flow<select data-d="flow" data-k="'+selCy+'">'+opts(['','Light','Medium','Heavy'],d.flow||'')+'</select></label><label class="f">Cramps<select data-d="cr" data-k="'+selCy+'">'+opts(['','None','Mild','Strong'],d.cr||'')+'</select></label>'+fld('Mood','data-d="mood" data-k="'+selCy+'"',d.mood)+fld('Symptoms or notes','data-d="sym" data-k="'+selCy+'"',d.sym)+'</div>')+'</div>';
+ h+='<div class="card '+(P.mode==='personal'?'':'soft')+'"><h2>Next period estimate</h2>'+predHtml(P)+'</div>';
+ h+='<div class="card"><h3>Logged periods</h3>'+(cy.length?'<div class="tw"><table><tr><th>Start</th><th>End</th><th>Days</th><th>Cycle</th><th></th></tr>'+cy.slice().reverse().map(c=>{const prev=cy[cy.indexOf(c)-1];return '<tr><td><input type="date" data-cy="'+c.id+'" data-f="s" value="'+c.s+'" max="'+todayK+'" aria-label="Start"></td><td><input type="date" data-cy="'+c.id+'" data-f="e" value="'+c.e+'" max="'+todayK+'" aria-label="End"></td><td>'+(c.e?diffD(c.s,c.e)+1:'–')+'</td><td>'+(prev?diffD(prev.s,c.s)+' d':'–')+'</td><td><button class="btn s b" data-a="delcy" data-v="'+c.id+'" aria-label="Delete period">'+(armed==='dc'+c.id?'Sure?':'✕')+'</button></td></tr>'}).join('')+'</table></div><p class="note">Edit a date directly. Tap ✕ twice to delete a wrong entry.</p>':'<p class="note">No periods logged yet.</p>')+
+ '<p class="note">Your cycle is irregular, so a medical check-up is sensible whatever the estimate says. Also seek care for periods missing for 3 months, very heavy bleeding or severe pain. Low weight, under-eating and over-exercise can affect cycles, so no crash diets. On cramp or low-energy days swap training for walking and gentle stretches.</p></div>';
+ return h}
+/* ---------- Care ---------- */
+function vCare(){const D=S.meta.dent,dd=dentDone(),n=D.teeth.length,M=S.meta.med.slice().sort((a,b)=>(a.pl||'9')<(b.pl||'9')?-1:1);
+ let h='<div class="card"><div class="row sp"><h2 style="margin:0">Dental repairs</h2><b>'+dd+' of '+n+' completed</b></div><div class="bar big" style="margin:8px 0"><i style="width:'+Math.round(dd/n*100)+'%"></i></div>';
+ D.teeth.forEach((t,i)=>{const a='data-dt="'+i+'" data-f=';
+  h+='<details data-oid="t'+i+'" class="tc"><summary><span>'+esc(t.l)+'</span> <span class="pill'+(t.st==='Completed'?'':' nv')+'">'+esc(t.st)+'</span>'+(t.appt&&t.st!=='Completed'?' <small class="note">'+sh(t.appt)+'</small>':'')+'</summary><div class="g" style="margin-top:8px">'+
+  fld('Label',a+'"l"',t.l)+'<label class="f">Status<select '+a+'"st">'+opts(DENST,t.st)+'</select></label>'+fld('Appointment date',a+'"appt"',t.appt,'date')+fld('Completion date',a+'"done"',t.done,'date')+'<label class="f" style="grid-column:1/-1">Treatment notes<textarea '+a+'"nt">'+esc(t.nt||'')+'</textarea></label></div></details>'});
+ const b=D.br,ba='data-br="1" data-f=';
+ h+='</div><div class="card"><h2>Braces (optional)</h2><p class="note">Braces are not assumed. Update this only after your orthodontist has assessed you.</p><div class="g"><label class="f">Status<select '+ba+'"st">'+opts(BRST,b.st)+'</select></label>'+fld('Date',ba+'"d"',b.d,'date')+'<label class="f" style="grid-column:1/-1">Notes<textarea '+ba+'"nt">'+esc(b.nt||'')+'</textarea></label></div></div>';
+ h+='<div class="card"><div class="row sp"><h2 style="margin:0">Medical appointments</h2><button class="btn p" data-a="addm">Add</button></div>';
+ if(!M.length)h+='<p class="note">Nothing here yet. Add a check-up, for example a gynaecologist or skin and hair review.</p>';
+ M.forEach(m=>{const a='data-md="'+m.id+'" data-f=';
+  h+='<details data-oid="m:'+m.id+'" class="tc"><summary><span>'+esc(m.n||'Appointment')+'</span> <span class="pill'+(m.st==='Completed'?'':' nv')+'">'+esc(m.st)+'</span>'+(m.pl?' <small class="note">'+sh(m.pl)+'</small>':'')+'</summary><div class="g" style="margin-top:8px">'+
+  fld('Appointment or check-up',a+'"n"',m.n)+fld('Doctor or clinic (optional)',a+'"cl"',m.cl)+fld('Planned date',a+'"pl"',m.pl,'date')+fld('Appointment taken on',a+'"tk"',m.tk,'date')+'<label class="f">Status<select '+a+'"st">'+opts(MEDST,m.st)+'</select></label>'+fld('Follow-up date',a+'"fu"',m.fu,'date')+
+  '<label class="f" style="grid-column:1/-1">Notes<textarea '+a+'"nt">'+esc(m.nt||'')+'</textarea></label></div><p><button class="btn s b" data-a="delm" data-v="'+m.id+'">'+(armed==='dm'+m.id?'Tap again to delete':'Delete')+'</button></p></details>'});
+ return h+'</div>'}
+/* ---------- Progress ---------- */
+const rangeDays=n=>{const o=[];for(let i=n-1;i>=0;i--)o.push(add(todayK,-i));return o};
+function vProg(){const days=rangeDays(pgR),sc=days.map(k=>[k,score(k)]),tr=sc.filter(x=>x[1].tr);
+ const agg=c=>{let a=0,b=0,n=0;sc.forEach(([k,s])=>{const q=s.c[c];if(q&&q.ans>0&&q.den>0){a+=q.num;b+=q.den;n++}});return{p:b?Math.round(a/b*100):null,n}};
+ const row=(l,o,x)=>'<div class="prow"><div class="row sp"><span>'+l+'</span><b>'+(o.p==null?'–':o.p+'%')+'</b></div><div class="bar"><i style="width:'+(o.p||0)+'%"></i></div><small class="note">'+(o.p==null?'Nothing entered yet in this period':(x||'')+'Based on '+o.n+' day'+(o.n>1?'s':'')+' with entries')+'</small></div>';
+ const hairN=days.filter(k=>{const h=peek(k).hc;return h&&h.on===1}).length;
+ const wkP=[];for(let i=7;i>=0;i--){const w=add(wkS(todayK),-7*i),ps=[];for(let j=0;j<7;j++){const k=add(w,j);if(k>todayK)break;const s=score(k);if(s.tr)ps.push(s.pct)}wkP.push({l:sh(w),v:ps.length?Math.round(avg(ps)):0})}
+ const ap=S.meta.med,apd=ap.filter(m=>m.st==='Completed').length;
+ let h='<div class="card"><div class="row sp"><h2 style="margin:0">Progress</h2><div class="seg"><button data-a="pgr" data-v="7" class="'+(pgR==7?'on':'')+'" style="font-size:13px">7 days</button><button data-a="pgr" data-v="30" class="'+(pgR==30?'on':'')+'" style="font-size:13px">30 days</button></div></div>'+
+ '<div class="tiles">'+tile('Days tracked',tr.length+' of '+pgR,Math.round(tr.length/pgR*100))+tile('Average on tracked days',tr.length?Math.round(avg(tr.map(x=>x[1].pct)))+'%':'–',tr.length?Math.round(avg(tr.map(x=>x[1].pct))):0)+tile('Haircare done',hairN+(hairN===1?' time':' times'))+tile('Dental repairs',dentDone()+' of '+S.meta.dent.teeth.length,Math.round(dentDone()/S.meta.dent.teeth.length*100))+'</div><p class="note">Only things you filled in count. Skipped and optional tasks never lower your score. Untracked days are left out.</p></div>';
+ h+='<div class="card"><h3>By area</h3>'+row('Food: meals written down',agg('food'))+row('Workout and movement',agg('move'))+row('Skincare and haircare',agg('glow'))+row('Personal tasks',agg('pers'))+
+ '<div class="prow"><div class="row sp"><span>Medical appointments completed</span><b>'+apd+' of '+ap.length+'</b></div><div class="bar"><i style="width:'+(ap.length?Math.round(apd/ap.length*100):0)+'%"></i></div></div></div>';
+ h+='<div class="card"><h3>Daily completion</h3><div class="ch">'+bars(sc.map(([k,s])=>({l:sh(k),v:s.tr?s.pct:0})),{t:'Daily completion percent'})+'</div><h3 style="margin-top:12px">Weekly average (tracked days)</h3><div class="ch">'+bars(wkP,{t:'Weekly average'})+'</div></div>';
+ const bd=S.meta.body.slice().sort((a,b)=>a.d<b.d?-1:1);
+ h+='<div class="card">'+det('bd','<b>Body check-ins (optional)</b>','<p class="note">Monthly is plenty. A smaller waist or lower weight is not automatic success.</p><div class="g"><label class="f">Date<input id="b_d" type="date" value="'+cur+'"></label>'+[['Weight kg','w'],['Waist in','waist'],['Hips in','hips'],['Thigh in','thigh']].map(x=>'<label class="f">'+x[0]+'<input id="b_'+x[1]+'" type="number" step="0.1"></label>').join('')+'</div><p><button class="btn p" data-a="addb">Save check-in</button></p>'+(bd.length?'<div class="tw"><table><tr><th>Date</th><th>Weight</th><th>Waist</th><th>Hips</th><th>Thigh</th><th></th></tr>'+bd.slice().reverse().map(x=>'<tr><td>'+esc(x.d)+'</td><td>'+esc(x.w)+'</td><td>'+esc(x.waist)+'</td><td>'+esc(x.hips)+'</td><td>'+esc(x.thigh)+'</td><td><button class="btn s b" data-a="delb" data-v="'+esc(x.d)+'" aria-label="Delete">✕</button></td></tr>').join('')+'</table></div>':''))+'</div>';
+ return h}
+/* ---------- Calendar ---------- */
+function dayPanel(k){const L=items(k),d=peek(k),by={1:[],3:[],2:[],0:[]};
+ L.forEach(it=>{const s=stOf(k,it);if(!(it.opt&&!s))by[s].push(esc(it.t))});
+ const ap=apptDates()[k]||[],ev=S.meta.ev[k]||[],fut=k>todayK;
+ const line=(l,a)=>a.length?'<p style="margin:4px 0"><b>'+l+' ('+a.length+'):</b> '+a.join(', ')+'</p>':'';
+ const meals=SLOTS.map(s=>d.meal[s[0]]?'<li><b>'+s[1]+':</b> '+esc(d.meal[s[0]])+'</li>':'').join('');
+ return '<div class="card"><div class="row sp"><h3 style="margin:0">'+fmt(k)+'</h3><button class="btn s" data-a="calopen" data-v="'+k+'">Open this day</button></div>'+
+ (inPeriod(k)?'<p><span class="pill nv">Period day</span></p>':'')+line('Done',by[1])+line('Partly',by[3])+line('Skipped',by[2])+line(fut?'Planned':'Not marked',by[0])+
+ (d.hc&&d.hc.on===1?'<p style="margin:4px 0"><b>Haircare:</b> '+(HAIRDO.filter(x=>d.hc.did&&d.hc.did[x[0]]).map(x=>x[1]).join(', ')||'Yes')+'</p>':'')+
+ (meals?'<ul class="cl">'+meals+'</ul>':'')+(ap.length?'<p style="margin:4px 0"><b>Appointments:</b> '+ap.map(esc).join('; ')+'</p>':'')+
+ '<h3 style="margin-top:12px">Notes and events</h3>'+(ev.length?'<ul class="cl">'+ev.map((e,i)=>'<li>'+esc(e)+' <button class="ic" data-a="delev" data-v="'+i+'" aria-label="Delete event">✕</button></li>').join('')+'</ul>':'')+
+ '<div class="row"><input id="ev_t" placeholder="Add a short note or event" style="flex:1;min-width:160px" aria-label="Event"><button class="btn" data-a="addev">Add</button></div>'+
+ '<label class="f" style="margin-top:10px">Day journal<textarea data-d="note" data-k="'+k+'">'+esc(d.note||'')+'</textarea></label></div>'}
+function vCal(){const ev=S.meta.ev,ap=apptDates();
+ let h='<div class="card"><div class="row sp"><button class="btn s" data-a="cmn" data-v="-1" aria-label="Previous month">‹</button><h2 style="margin:0">'+mLabel(calM)+'</h2><button class="btn s" data-a="cmn" data-v="1" aria-label="Next month">›</button></div>'+
+ grid(calM,(k,inM)=>{const s=score(k),c=colr(k,s),dots=(ap[k]?'<i class="dot a"></i>':'')+((ev[k]&&ev[k].length)||peek(k).note?'<i class="dot n"></i>':'');
+  return '<button class="cd '+c+(inM?'':' out')+(k===todayK?' td':'')+(k===selCal?' sel':'')+'" data-a="calsel" data-v="'+k+'" aria-label="'+fmt(k)+'"><span class="n">'+pd(k).getDate()+'</span><span class="mk">'+dots+'</span>'+(inPeriod(k)?'<span class="pb"></span>':'')+'</button>'})+
+ '<div class="legend"><span><i class="sw gr"></i>Mostly done</span><span><i class="sw y"></i>Partly</span><span><i class="sw r"></i>Missed or very low</span><span><i class="sw n"></i>Not tracked</span><span><i class="sw pb"></i>Period</span><span><i class="dot a"></i>Appointment</span><span><i class="dot n"></i>Note</span></div><p class="note">Grey means you did not track that day. It is never counted as missed.</p></div>';
+ h+=dayPanel(selCal);
+ const rows=[];for(let i=7;i>=0;i--){const w=add(wkS(todayK),-7*i);let tr=0,dn=0,pa=0,sk=0;const ps=[];for(let j=0;j<7;j++){const k=add(w,j);if(k>todayK)break;const s=score(k);if(s.tr){tr++;dn+=s.dn;pa+=s.pa;sk+=s.sk;ps.push(s.pct)}}rows.push([w,tr,dn,pa,sk,ps.length?Math.round(avg(ps)):null])}
+ h+='<div class="card"><h3>Past weeks</h3><div class="tw"><table><tr><th>Week of</th><th>Days tracked</th><th>Done</th><th>Partly</th><th>Skipped</th><th>Average</th></tr>'+rows.reverse().map(r=>'<tr><td>'+sh(r[0])+'</td><td>'+r[1]+'</td><td>'+r[2]+'</td><td>'+r[3]+'</td><td>'+r[4]+'</td><td>'+(r[5]==null?'–':r[5]+'%')+'</td></tr>').join('')+'</table></div></div>';
+ return h}
+/* ---------- Plan ---------- */
+function vPlan(){const c=S.meta.cfg;
+ const tt=[['5:50','Wake up, water, wash face'],['6:00','Workout 30–40 min, or yoga and mobility'],['6:40','Cool down, breathing, posture'],['7:00','Bath, skincare, sunscreen'],['7:30','Breakfast'],['8:00','Get ready and commute. Carry lunch, snack, water'],['9:00–19:00','Office. Snack 11:00, lunch 13:30, stand up every 30–60 min'],['17:00','Evening snack (or have one outside after office)'],['20:00','Dinner'],['20:30','Editing, acting, reading or learning'],['21:30','Night skincare, prep clothes and meals'],['22:00','Sleep, 7–9 hours']];
+ let h='<div class="card"><h2>My plan</h2><p class="note">Reference only. Nothing here needs filling in. If you cannot wake at 5:50, move the whole routine later. Sleep matters more than an early workout.</p>'+
+ det('p1','Weekday timetable (office 9 AM–7 PM)','<div class="tw"><table>'+tt.map(x=>'<tr><td><b>'+x[0]+'</b></td><td>'+x[1]+'</td></tr>').join('')+'</table></div>')+
+ det('p2','Weekend plan','<p><b>Saturday:</b> 7–8 skating or badminton (alternate weeks), 11–12 zumba or dance, 2–3 acting and expressions, 8–9 one small editing task. Haircare day.<br><b>Sunday:</b> gentle yoga and a walk, afternoon meal prep, groceries and laundry, evening reading, journaling and planning. Haircare day.</p><p class="note">Do not force every activity into every weekend.</p>')+
+ det('p3','Weekly workout split','<div class="tw"><table>'+EX.map((e,i)=>'<tr><td><b>'+DN[i]+'</b></td><td>'+e[0]+(e[1].length?'<br><small class="note">'+e[1].map(x=>x[0]).join(', ')+'</small>':'')+'</td></tr>').join('')+'</table></div><p class="note">Week 1 lighter sets, week 2 full sets, week 3 add reps or weight, week 4 hold and perfect form. Leave 1–3 reps in reserve.</p>')+
+ det('p4','Food rotation and guidance',rotTable()+'<p class="note">Meals come from home and the office, so this is a guide, not a rule. Vegetarian days use paneer, soy, milk, curd, dal and chickpeas for protein. For protein estimates you can give your meal list to a nutrition tool or a dietitian.</p><p class="note">Mass gainer (optional): read serving size and calories on your own tub, start with about a quarter serving after training, and stop if it makes you too full for meals. Ask a doctor first if you have kidney or blood-sugar conditions.</p>')+
+ det('p5','Skincare and haircare','<ul><li>Morning: gentle cleanser, moisturiser, sunscreen SPF 30–50, lip balm</li><li>Night: cleanse, moisturiser, lip balm</li><li>Masks: Wednesday aloe vera gel, Sunday plain yogurt, patch-test first</li><li>Haircare: Saturday and Sunday. Wash 2–3 times a week at most, condition, detangle gently</li></ul><p class="note">Masks and oils condition. They do not grow hair. Persistent hair fall deserves a doctor visit.</p>')+
+ det('p6','Posture and ergonomics','<ul>'+POST.map(p=>'<li>'+p+'</li>').join('')+'</ul><p class="note">Screen at eye level, feet supported, stand up every 30–60 min. Neutral and relaxed beats forced.</p>')+
+ det('p7','Personal development','<p>Weekdays: 20–30 minutes of editing, acting practice, reading or learning. Saturday: acting, expressions and one small edit. Sunday: reading, journaling, planning. Finish old videos one small step at a time.</p>')+
+ det('p8','Grocery list and Sunday prep','<p>Eggs, chicken, fish, paneer, milk, curd, Greek yogurt, soy chunks, dal, rajma, chana, rice, atta, oats, poha, bread, peanut butter, bananas, seasonal fruit, guava, amla, dates, nuts, seeds, spinach, vegetables, aloe vera gel, coconut oil.</p><ul><li>Soak rajma or chana, boil eggs</li><li>Cook dal and a base gravy, chop vegetables</li><li>Portion nuts and dates, plan the week’s lunches</li></ul>')+
+ det('p9','Realistic expectations','<p>Exercise builds muscle and strength over months. It cannot remove fat from one spot, choose where weight is gained, change facial bones or teeth, or change breast size. Your BMI is around 18.3, so the aim is gradual muscle gain, not weight loss. Irregular periods and hair fall deserve a medical check-up.</p>')+'</div>';
+ h+='<div class="card"><h3>Settings</h3><div class="g">'+fld('Your name (optional)','data-c="name"',c.name)+fld('Programme start date','data-c="start"',c.start,'date')+'</div></div>';
+ h+='<div class="card"><h3>Your data on this phone</h3><p class="note">Everything stays inside this app on your phone. Nothing is sent anywhere. Download a spreadsheet or backup, or delete what you no longer want. Deleting cannot be undone.</p><div class="row"><button class="btn" data-a="csv">Download spreadsheet (CSV)</button><button class="btn" data-a="bak">Download backup file</button></div><div class="row" style="margin-top:10px">'+
+ [['deld','Delete this day’s entries','Tap again to delete this day'],['delold','Delete entries older than 90 days','Tap again to confirm'],['delall','Delete everything','Tap again to delete ALL data']].map(x=>'<button class="btn b" data-a="'+x[0]+'">'+(armed===x[0]?x[2]:x[1])+'</button>').join('')+
+ '</div><h3 style="margin-top:14px">Restore</h3><p class="note">Paste a backup (from this or the older version of the app) and press Restore. Old entries are converted safely.</p><textarea id="io" style="min-height:80px"></textarea><div class="row" style="margin-top:8px"><button class="btn b" data-a="imp">Restore from text</button></div></div>';
+ return h}
+
+/* ---------- app shell ---------- */
+const TABS=[['today','Today'],['food','Food'],['move','Move'],['glow','Glow'],['cycle','Cycle'],['care','Care'],['prog','Progress'],['plan','Plan'],['cal','Calendar']];
+const VIEWS={today:vToday,food:vFood,move:vMove,glow:vGlow,cycle:vCycle,care:vCare,prog:vProg,plan:vPlan,cal:vCal};
+function render(){
+ document.querySelectorAll('details[data-oid]').forEach(x=>{x.open?openSet.add(x.dataset.oid):openSet.delete(x.dataset.oid)});
+ $('#dl').textContent=fmt(cur);$('.dn').hidden=!['today','food','move','glow'].includes(tab);
+ $('#nav').innerHTML=TABS.map(t=>'<button data-a="tab" data-v="'+t[0]+'"'+(t[0]===tab?' aria-current="true"':'')+'>'+t[1]+'</button>').join('');
+ $('#main').innerHTML=VIEWS[tab](cur);
+ document.querySelectorAll('details[data-oid]').forEach(x=>{x.open=openSet.has(x.dataset.oid)});
+ try{const a=$('#nav [aria-current]');if(a&&a.scrollIntoView)a.scrollIntoView({inline:'center',block:'nearest'})}catch(e){}}
 let tint=0,tend=0;
 function timer(min){clearInterval(tint);const el=()=>$('#tmr');if(!min){if(el())el().textContent='–:––';return}tend=Date.now()+min*60000;
  const tick=()=>{const s=Math.max(0,Math.round((tend-Date.now())/1000));if(el())el().textContent=Math.floor(s/60)+':'+pad(s%60);if(s<=0){clearInterval(tint);if(el())el().textContent='Done. Breathe out.'}};tick();tint=setInterval(tick,1000)}
-document.addEventListener('click',e=>{const b=e.target.closest('[data-a]');if(!b)return;const a=b.dataset.a,v=b.dataset.v,d=()=>dayOf(cur),was=armed;armed='';
- if(a==='tab'){tab=v;scrollTo(0,0)}
- else if(a==='day')cur=v==='0'?todayK:add(cur,+v);
- else if(a==='go')cur=v;
- else if(a==='wkn')cur=add(cur,7*v);
- else if(a==='hab'){const x=d(),n=((x.h[v]||0)+1)%3;if(n)x.h[v]=n;else delete x.h[v];touchDay(cur)}
- else if(a==='sug'){const f=findF(b.dataset.f);if(!f)return;d().m.push({s:v,f:f[0],q:f[1],c:f[2],p:f[3]});touchDay(cur)}
- else if(a==='delm'){d().m.splice(+v,1);touchDay(cur)}
- else if(a==='addm'){const g=i=>$('#a_'+i).value,f=g('f').trim();if(!f)return;d().m.push({s:g('s'),f,q:g('q'),c:g('c'),p:g('p'),cb:g('cb'),ft:g('ft')});touchDay(cur)}
- else if(a==='fv'){const x=d();x.fv=Math.max(0,(x.fv||0)+(+v));touchDay(cur)}
- else if(a==='w'){const x=d();x.w=(x.w||0)===+v?+v-1:+v;touchDay(cur)}
- else if(a==='timer'){timer(+v);return}
- else if(a==='ps'){if(!S.meta.cycle.some(c=>c.s===cur))S.meta.cycle.push({s:cur,e:''});touchMeta()}
- else if(a==='pe'){const l=S.meta.cycle.filter(c=>c.s&&c.s<=cur).sort((x,y)=>x.s<y.s?-1:1).pop();if(l){l.e=cur;touchMeta()}}
- else if(a==='delc'){S.meta.cycle=S.meta.cycle.filter(c=>c.s!==v);touchMeta()}
- else if(a==='adda'){const dt=$('#ap_d').value,n=$('#ap_n').value.trim();if(!dt||!n)return;S.meta.appts.push({d:dt,n});S.meta.appts.sort((x,y)=>x.d<y.d?-1:1);touchMeta()}
- else if(a==='dela'){S.meta.appts.splice(+v,1);touchMeta()}
- else if(a==='addb'){const g=i=>$('#b_'+i).value,e2={d:g('d')||cur};['w','waist','hips','thigh','plank','cl','cf','gl'].forEach(f=>e2[f]=g(f));if(!['w','waist','hips','thigh','plank','gl'].some(f=>e2[f]!==''))return;S.meta.body=S.meta.body.filter(x=>x.d!==e2.d);S.meta.body.push(e2);touchMeta()}
- else if(a==='delb'){S.meta.body=S.meta.body.filter(x=>x.d!==v);touchMeta()}
- else if(a==='csv'){const t=mkCsv();dl('reset27-days.csv',t,'text/csv');$('#io').value=t;return}
- else if(a==='bak'){const t=JSON.stringify(S);dl('reset27-backup.json',t,'application/json');$('#io').value=t;return}
- else if(a==='deld'||a==='delold'||a==='delall'){if(was!==a){armed=a;render();return}
+function csvEsc(v){v=String(v==null?'':v);return /[",\n]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v}
+function mkCsv(){const H=['date','overall_pct','done','partly','skipped','breakfast','mid_morning','lunch','evening_snack','dinner','haircare','note'];
+ const rows=Object.keys(S.days).sort().map(k=>{const d=peek(k),s=score(k);return [k,s.tr?s.pct:'',s.dn,s.pa,s.sk,d.meal.bf,d.meal.ms,d.meal.ln,d.meal.es,d.meal.dn,d.hc&&d.hc.on===1?'yes':d.hc&&d.hc.on===0?'no':'',d.note]});
+ return [H].concat(rows).map(r=>r.map(csvEsc).join(',')).join('\n')}
+function dl(name,text,type){try{const u=URL.createObjectURL(new Blob([text],{type}));const a=document.createElement('a');a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),3000)}catch(e){}}
+const byId=(arr,id)=>arr.findIndex(x=>x.id===id);
+document.addEventListener('click',e=>{const b=e.target.closest('[data-a]');if(!b)return;
+ const a=b.dataset.a,v=b.dataset.v,was=armed;armed='';const D=()=>dayOf(cur);
+ switch(a){
+ case 'tab':tab=v;scrollTo(0,0);break;
+ case 'day':cur=v==='0'?todayK:add(cur,+v);break;
+ case 'tg':openSet.has(v)?openSet.delete(v):openSet.add(v);break;
+ case 'st':{const ids=b.dataset.ids.split('|'),n=+v,nv=aggS(cur,ids)===n?0:n,d=D();ids.forEach(i=>{if(nv)d.st[i]=nv;else delete d.st[i]});save();break}
+ case 'allx':{const ids=b.dataset.ids.split('|'),d=D(),all=ids.every(i=>d.st[i]===1);ids.forEach(i=>{if(all)delete d.st[i];else d.st[i]=1});save();break}
+ case 'hy':{const d=D();if(d.hc&&d.hc.on===1&&b.closest('.seg'))delete d.hc;else d.hc={on:1,did:(d.hc&&d.hc.did)||{},extra:!HAIRREG.includes(dow(cur))};save();break}
+ case 'hn':{const d=D();if(d.hc&&d.hc.on===0)delete d.hc;else d.hc={on:0};save();break}
+ case 'hx':delete D().hc;save();break;
+ case 'hd':{const d=D();if(d.hc){d.hc.did=d.hc.did||{};d.hc.did[v]=!d.hc.did[v]}save();break}
+ case 'fsk':{const d=D();if(d.fs[v]===2)delete d.fs[v];else d.fs[v]=2;save();break}
+ case 'w':{const d=D();d.w=(d.w||0)===+v?+v-1:+v;save();break}
+ case 'act':{const n=v||$('#ac_t').value.trim();if(!n){toast('Type an activity first.');return}const d=D(),id=uid();d.ct.push({id,t:n,c:'move'});d.st['c:'+id]=1;save();break}
+ case 'addt':{const t=$('#nt_t').value.trim();if(!t){toast('Type a task first.');return}
+  const c=$('#nt_c').value||'pers',r=$('#nt_r').value,id=uid();
+  if(r==='0')D().ct.push({id,t,c});else S.meta.rt.push({id,t,c,days:r==='d'?[0,1,2,3,4,5,6]:r==='w'?[0,1,2,3,4]:[5,6],from:cur});
+  save();toast('Task added');break}
+ case 'edit':editId=v;break;
+ case 'edsave':{const el=[...document.querySelectorAll('[data-ed]')].find(x=>x.dataset.ed===v),n=el?el.value.trim():'',id=v.slice(2);
+  if(n){const i=byId(S.meta.rt,id);if(i>=0)S.meta.rt[i].t=n;else{const j=byId(D().ct,id);if(j>=0)D().ct[j].t=n}save()}editId='';break}
+ case 'rmc':{const id=v.slice(2),i=byId(S.meta.rt,id);
+  if(i>=0){if(was!=='rm'+v){armed='rm'+v;break}S.meta.rt.splice(i,1)}
+  else{const d=D(),j=byId(d.ct,id);if(j>=0)d.ct.splice(j,1);delete d.st[v]}
+  save();break}
+ case 'cym':cyM=addM(cyM,+v);break;
+ case 'cysel':selCy=v;cyM=v.slice(0,7);break;
+ case 'ps':{if(selCy>todayK){toast('You can only log dates up to today.');return}
+  if(S.meta.cycle.some(c=>selCy>=c.s&&(c.e?selCy<=c.e:selCy===c.s))){toast('That date is already inside a logged period.');return}
+  S.meta.cycle.push({id:uid(),s:selCy,e:''});S.meta.cycle.sort((x,y)=>x.s<y.s?-1:1);save();toast('Period start saved. Now select the end date when it finishes.');break}
+ case 'pe':{const c=S.meta.cycle.filter(x=>x.s<=selCy).pop();
+  if(!c){toast('Mark a period start on or before this date first.');return}
+  if(selCy>todayK){toast('You can only log dates up to today.');return}
+  if(diffD(c.s,selCy)>14){toast('That is more than 15 days after the start. Please check the dates.');return}
+  c.e=selCy;save();toast('Period end saved');break}
+ case 'delcy':{if(was!=='dc'+v){armed='dc'+v;break}const i=byId(S.meta.cycle,v);if(i>=0)S.meta.cycle.splice(i,1);save();break}
+ case 'addm':{const m={id:uid(),n:'New appointment',cl:'',pl:'',tk:'',st:'To book',nt:'',fu:''};S.meta.med.push(m);openSet.add('m:'+m.id);save();break}
+ case 'delm':{if(was!=='dm'+v){armed='dm'+v;break}const i=byId(S.meta.med,v);if(i>=0)S.meta.med.splice(i,1);save();break}
+ case 'pgr':pgR=+v;break;
+ case 'addb':{const g=i=>$('#b_'+i).value,e2={d:g('d')||cur,w:g('w'),waist:g('waist'),hips:g('hips'),thigh:g('thigh')};
+  if(!['w','waist','hips','thigh'].some(f=>e2[f]!=='')){toast('Enter at least one measurement.');return}
+  S.meta.body=S.meta.body.filter(x=>x.d!==e2.d);S.meta.body.push(e2);save();break}
+ case 'delb':S.meta.body=S.meta.body.filter(x=>x.d!==v);save();break;
+ case 'cmn':calM=addM(calM,+v);break;
+ case 'calsel':selCal=v;calM=v.slice(0,7);break;
+ case 'calopen':cur=v;tab='today';scrollTo(0,0);break;
+ case 'addev':{const t=$('#ev_t').value.trim();if(!t){toast('Type a note first.');return}(S.meta.ev[selCal]=S.meta.ev[selCal]||[]).push(t);save();break}
+ case 'delev':{const l=S.meta.ev[selCal]||[];l.splice(+v,1);if(!l.length)delete S.meta.ev[selCal];save();break}
+ case 'timer':timer(+v);return;
+ case 'csv':{const t=mkCsv();dl('reset27-days.csv',t,'text/csv');$('#io').value=t;return}
+ case 'bak':{const t=JSON.stringify(S);dl('reset27-backup.json',t,'application/json');$('#io').value=t;return}
+ case 'deld':case 'delold':case 'delall':{if(was!==a){armed=a;break}
   if(a==='deld')delete S.days[cur];
-  else if(a==='delold'){const cut=add(todayK,-90);Object.keys(S.days).forEach(k=>{if(k<cut)delete S.days[k]});Object.keys(S.meta.wk).forEach(k=>{if(k<cut)delete S.meta.wk[k]})}
-  else{S={meta:{body:[],cycle:[],rev:{},appts:[],cfg:defCfg(),_t:0},days:{}};fixMeta()}
-  persist()}
- else if(a==='exp'){$('#io').value=JSON.stringify(S);return}
- else if(a==='imp'){try{const x=JSON.parse($('#io').value);if(!x||!x.meta||!x.days)throw 0;S=x;fixMeta();dirty.add('meta');Object.keys(S.days).forEach(k=>dirty.add(mk(k)));persist()}catch(er){setSync('That text is not a valid backup.');return}}
- else return;
+  else if(a==='delold'){const cut=add(todayK,-90);Object.keys(S.days).forEach(k=>{if(k<cut)delete S.days[k]})}
+  else{S={meta:defMeta(),days:{}};migrateAll()}
+  save();toast('Deleted');break}
+ case 'imp':{try{const x=JSON.parse($('#io').value);if(!x||!x.meta||!x.days)throw 0;S=x;migrateAll();save();toast('Restored')}catch(er){toast('That text is not a valid backup.');return}break}
+ default:return}
  render()});
-document.addEventListener('change',e=>{const t=e.target;
- if(t.id==='a_f'){const f=findF(t.value);if(f){$('#a_q').value=f[1];$('#a_c').value=f[2];$('#a_p').value=f[3]}return}
- if(t.dataset.pg!==undefined){pgEx=t.value;render();return}
- const val=t.type==='checkbox'?(t.checked?1:0):t.type==='number'?(t.value===''?'':+t.value):t.value,rr=t.type==='checkbox'||t.tagName==='SELECT',D=t.dataset;
- if(D.d){setPath(dayOf(cur),D.d,val);touchDay(cur)}
- else if(D.m){const[i,f]=D.m.split('.'),x=dayOf(cur).m[i];if(!x)return;x[f]=val;touchDay(cur)}
- else if(D.x){const[n,f]=D.x.split('|'),x=dayOf(cur);(x.ex[n]=x.ex[n]||{})[f]=val;touchDay(cur)}
- else if(D.w){wkOf(cur)[D.w]=val;touchMeta()}
- else if(D.c){S.meta.cfg[D.c]=D.c==='start'?t.value:num(t.value);touchMeta()}
- else if(D.rv){const[key,f]=D.rv.split('|');(S.meta.rev[key]=S.meta.rev[key]||{})[f]=val;touchMeta()}
- else return;
- if(rr)render();else upd()});
-render();setSync('Saved on this phone only');try{navigator.storage&&navigator.storage.persist&&navigator.storage.persist()}catch(e){}
+document.addEventListener('change',e=>{const t=e.target,D=t.dataset;
+ const val=t.type==='number'?(t.value===''?'':+t.value):t.value,rr=t.tagName==='SELECT'||t.type==='date';
+ if(D.d){setPath(dayOf(D.k||cur),D.d,val);save();if(rr)render();return}
+ if(D.cy){const c=S.meta.cycle.find(x=>x.id===D.cy);if(!c)return;const v=t.value;
+  if(D.f==='s'){if(!v||v>todayK||(c.e&&v>c.e)){toast('Please check the start date.');render();return}c.s=v}
+  else{if(v&&(v<c.s||v>todayK||diffD(c.s,v)>14)){toast('End must be on or after the start, within 15 days.');render();return}c.e=v}
+  S.meta.cycle.sort((x,y)=>x.s<y.s?-1:1);save();render();return}
+ if(D.md){const m=S.meta.med.find(x=>x.id===D.md);if(!m)return;m[D.f]=t.value;save();if(rr)render();return}
+ if(D.dt!==undefined){const m=S.meta.dent.teeth[+D.dt];if(!m)return;m[D.f]=t.value;save();if(rr)render();return}
+ if(D.br){S.meta.dent.br[D.f]=t.value;save();if(rr)render();return}
+ if(D.c){S.meta.cfg[D.c]=t.value;save();if(D.c==='start')render();return}});
+document.addEventListener('keydown',e=>{if(e.key!=='Enter')return;const id=e.target.id,m={nt_t:'addt',ev_t:'addev',ac_t:'act'};
+ if(m[id]){e.preventDefault();const b=document.querySelector('[data-a="'+m[id]+'"]');if(b)b.click()}});
+document.addEventListener('visibilitychange',()=>{if(!document.hidden&&dk(new Date())!==todayK)location.reload()});
+render();setSync('Saved on this phone only');
+try{navigator.storage&&navigator.storage.persist&&navigator.storage.persist()}catch(e){}
 if('serviceWorker' in navigator)addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
 
 </script>
